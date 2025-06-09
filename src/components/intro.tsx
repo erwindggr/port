@@ -6,7 +6,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/all";
 import { useRef } from "react";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP);
 
 export default function Intro() {
     const sectionRef = useRef(null);
@@ -42,10 +42,10 @@ export default function Intro() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="w-[90%] sm:w-[95%] mx-auto py-30 px-6 sm:px-10 lg:px-20 border-b-1 border-t-1" style={{ borderColor: 'rgba(150, 150, 136, 0.3)' }}>
-            <h2 className="text-[clamp(2rem,6vw,4.5rem)] font-bold text-baseLight text-center dark:text-baseDark leading-snug font-[family-name:var(--font-geist-sans)]">
-                <span id="yes" className="inline-block mr-2">Yes</span>
-                <span className="inline-block">, I turn ideas into&nbsp;</span>
+        <section ref={sectionRef} className="w-[90%] sm:w-[95%] mx-auto py-10 sm:py-25 sm:px-10 lg:px-20 border-b-1 border-t-1" style={{ borderColor: 'rgba(150, 150, 136, 0.3)' }}>
+            <h2 className="text-[clamp(2rem,5vw,3rem)] font-bold text-baseLight text-center dark:text-baseDark leading-snug font-[family-name:var(--font-geist-sans)]">
+                <span id="yes" className="inline-block mr-2">Crafting</span>
+                <span className="inline-block">, ideas into&nbsp;</span>
                 <span
                     id="reliable"
                     ref={splitRef}

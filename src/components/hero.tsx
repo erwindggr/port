@@ -25,7 +25,7 @@ export default function Hero() {
             ease: "bounce.out",
         }, 0);
 
-        // Animate 'K' (last character of FULLSTACK)
+        // Animate (last character of FULLSTACK)
         const charK = fullstack.chars[fullstack.chars.length - 1];
         gsap.set(charK, {
             rotationX: -180,
@@ -168,9 +168,9 @@ export default function Hero() {
     });
 
     return (
-        <div className="w-full pt-60 pb-40 flex items-center flex-col justify-center">
+        <div className="w-full min-h-[95vh] flex items-center flex-col justify-center">
             <div>
-                <div className="flex flex-wrap gap-x-4">
+                <div className="flex flex-wrap flex-col sm:flex-row gap-x-4">
                     <p className="fullstack text-[clamp(2rem,7vw,10rem)] font-bold overflow-hidden break-words leading-tight">
                         FULLSTACK<span className="text-amber-400 dark:text-pink-800">✦</span>
                     </p>
