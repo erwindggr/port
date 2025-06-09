@@ -17,7 +17,7 @@ export default function Hero() {
         gsap.to(scrambleRef.current, {
             scrambleText: {
                 text: "ERWIN GUNAWAN",
-                chars: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+                chars: "ERWINDGGR",
                 revealDelay: 0.5,
             },
             duration: 1,
@@ -31,12 +31,12 @@ export default function Hero() {
     });
 
     return (
-        <div className="w-[90%] sm:w-[95%] mx-auto flex items-center justify-center">
+        <div className="w-full mx-auto flex items-center justify-center mt-15 sm:mt-30">
             <p
                 ref={scrambleRef}
-                className="text-[clamp(3.5rem,10vw,13rem)] font-bold font-sans text-center"
+                className="text-[clamp(2rem,10vw,13rem)] font-bold text-lightFooter dark:text-darkFooter font-[family-name:var(--font-playFair-display)]"
             >
-                ***************
+                ** **
             </p>
         </div>
     );

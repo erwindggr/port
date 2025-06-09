@@ -14,8 +14,8 @@ export default function Home() {
       <Showcase />
       <Tools />
       <Projects />
-      <Footer />
       <Erwin />
+      <Footer />
       {/* <div className="w-full min-h-screen"></div> */}
       {/* Add more components as needed */}
     </div>

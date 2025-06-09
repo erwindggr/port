@@ -31,7 +31,7 @@ export default function Intro() {
                 { rotationY: 180, color: "#080905" },
                 {
                     rotationY: 0,
-                    color: "#f6abb0",
+                    color: "#58c4dc",
                     duration: 0.6,
                     ease: "back.out(1.7)",
                     stagger: 0.03

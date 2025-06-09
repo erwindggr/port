@@ -2,7 +2,7 @@ export default function Showcase() {
     return (
         <div className="w-full min-h-screen mt-5 sm:mt-30">
             <div className="w-[90%] sm:w-[85%] md:w-[60%] mx-auto relative z-5">
-                <h2 className="text-4xl sm:text-7xl font-bold font-[family-name:var(--font-geist-sans)]]]">Latest work</h2>
+                <h2 className="text-4xl sm:text-7xl font-bold font-[family-name:var(--font-geist-sans)]]] text-lightFooter dark:text-darkLighter">Latest work</h2>
             </div>
             <div className="w-[90%] sm:w-[85%] md:w-[60%] mx-auto aspect-[16/9]">
                 <video
@@ -20,7 +20,7 @@ export default function Showcase() {
 
                     <div className="text-sm font-[family-name:var(--font-geist-mono)] mt-2 leading-relaxed text-lightDarker dark:text-darkLighter">
                         <p>
-                            Built for small local business (UMKM) in Batam, Indonesia.
+                            Built for small local business (UMKM).
                         </p>
                     </div>
                 </div>
@@ -28,9 +28,9 @@ export default function Showcase() {
             {/* Feature List */}
             <div className="mt-1 font-[family-name:var(--font-geist-mono)] text-sm text-justify text-lightDarker dark:text-darkLighter w-[90%] sm:w-[85%] md:w-[60%] mx-auto">
                 <p>
-                    The system supports product search with variation handling (size & color), stock monitoring, and basic inventory management.
-                    It enables easy price updates, tracks sales history with receipt reprints, and provides daily filtered sales reports via a clean dashboard.
-                    Designed to be responsive and optimized for small laptops, it's built for real-world usage in small retail environments.
+                    This system simplifies product searches — even with size and color variations. It keeps stock levels in check, makes price updates quick, and ensures every sale is tracked with reprintable receipts.
+
+                    At the end of the day, owners get a clean, filtered sales report right from the dashboard. Designed for small laptops and tight spaces.
                 </p>
 
             </div>

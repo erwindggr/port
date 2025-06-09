@@ -172,7 +172,7 @@ export default function Hero() {
             <div>
                 <div className="flex flex-wrap flex-col sm:flex-row gap-x-4">
                     <p className="fullstack text-[clamp(2rem,7vw,10rem)] font-bold overflow-hidden break-words leading-tight">
-                        FULLSTACK<span className="text-amber-400 dark:text-pink-800">✦</span>
+                        FULLSTACK<span className="text-purple-600 dark:text-pink-800">✦</span>
                     </p>
                     <p className="developer text-[clamp(2rem,7vw,10rem)] font-bold overflow-hidden break-words leading-tight">
                         DEVELOPER
@@ -184,8 +184,8 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="mt-10 mb-10 md:mt-35 px-4 text-baseLight dark:text-baseDark leading-relaxed">
-                <p className="description font-[family-name:var(--font-geist-mono)] text-[clamp(0.65rem,2.5vw,1.2rem)] text-muted italic">
+            <div className="mt-10 mb-10 md:mt-35 px-4 leading-relaxed">
+                <p className="description font-[family-name:var(--font-geist-mono)] text-[clamp(0.65rem,2.5vw,1.2rem)] text-muted italic text-lightDarker dark:text-darkLighter">
                     *************
                 </p>
             </div>

@@ -59,7 +59,7 @@ export default function Tools() {
 
     return (
         <>
-            <div className="w-[90%] sm:w-[85%] md:w-[60%] mx-auto mt-20 flex items-center justify-baselin gap-2 text-baseLight dark:text-baseDark text-lg font-[family-name:var(--font-geist-sans)]">
+            <div className="w-[90%] sm:w-[85%] md:w-[60%] mx-auto mt-2 sm:mt-20 flex items-center justify-baselin gap-2 text-baseLight dark:text-baseDark text-lg font-[family-name:var(--font-geist-sans)]">
                 {/* <span className="text-4xl sm:text-7xl font-light">{'{'}</span> */}
                 {/* <span className="font-semibold text-sm sm:text-xl">I'm working with</span> */}
                 <span className="font-semibold text-sm sm:text-xl">Tools & Side Projects</span>
