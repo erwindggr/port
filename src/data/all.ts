@@ -32,30 +32,35 @@ const projects = [
     title: "SmartVision",
     year: 2025,
     description: "Landing Page",
-    tags: "Front-end Development"
+    tags: "Front-end Development",
+    video: "/projects/smartVision.mp4",
+    image: "/projects/recipePal-2.png"
   },
   {
     title: "Othello",
     year: 2024,
     description: "Board Game",
-    tags: "Front-end / Game Development"
+    tags: "Front-end / Game Development",
+    image: "/projects/othello-2.png"
   },
   {
     title: "Recipe Pal",
     year: 2023,
     description: "Recipe App",
-    tags: "Front-end Development"
+    tags: "Front-end Development",
+    image: "/projects/recipePal-1.png"
   },
   {
     title: "Kopi O",
     year: 2023,
     description: "POS System",
-    tags: "Front / Back Development"
+    tags: "Fullstack Development",
+    image: "/projects/othello-1.png"
   },
 ];
 
 const aboutMe = [
-  "A Fullstack Developer who enjoys building clean and functional user interfaces. Making sure they look, work and scale up to a wonderful user experience.",
+  "Hey, I'm Erwin Gunawan! I build fullstack web apps with thoughtful design—making sure everything looks good, runs smoothly, and delivers a great user experience.",
   "Currently, I'm a Fullstack Developer at CLV Innovation Technology, a software house where I handle development and support for a Singapore-based F&B chain.",
   "Before getting into tech, I spent a few years in business and administrative roles, handling everything from customer service to contracts and operations. During that time, I had the chance to meet people from various industries, including those working in tech — which inspired me to pursue this path.",
   "In my spare time, I'm usually hanging out with friends, playing badminton, or (more recently) discovering the joy of climbing."

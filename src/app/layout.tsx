@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display, Cormorant_Garamond } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display, Cormorant_Garamond, Noto_Sans } from "next/font/google";
 import Navbar from "@/components/navbar";
 import "./globals.css";
 
@@ -24,6 +24,11 @@ const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
 });
 
+const notoSans = Noto_Sans({
+  variable: "--font-noto-sans",
+  subsets: ["latin"],
+})
+
 export const metadata: Metadata = {
   title: "Erwin - Fullstack Web Developer",
   description: "Fullstack developer specializing in React, Next.js, and modern web solutions. I build responsive, user-focused applications.",
@@ -37,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playFairDisplay.variable} ${cormorantGaramond.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playFairDisplay.variable} ${cormorantGaramond.variable} ${notoSans.variable} antialiased`}
       >
         <Navbar />
         <div className="grain-overlay" />

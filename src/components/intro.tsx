@@ -24,7 +24,7 @@ export default function Intro() {
         });
 
         tl.fromTo("#yes", { scale: 1 }, { scale: 1.5, duration: 0.4, ease: "power2.out" })
-            .to("#yes", { scale: 1, duration: 0.3, ease: "bounce.out" })
+            .to("#yes", { scale: 1, duration: 0.2, color: "#FF9F00", ease: "bounce.out" })
 
             .fromTo(
                 split.chars,
@@ -42,8 +42,8 @@ export default function Intro() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="w-[90%] sm:w-[95%] mx-auto py-10 sm:py-25 sm:px-10 lg:px-20 border-b-1 border-t-1" style={{ borderColor: 'rgba(150, 150, 136, 0.3)' }}>
-            <h2 className="text-[clamp(2rem,5vw,3rem)] font-bold text-baseLight text-center dark:text-baseDark leading-snug font-[family-name:var(--font-geist-sans)]">
+        <section ref={sectionRef} className="w-[90%] sm:w-[95%] mx-auto py-10 sm:py-15 sm:px-10 lg:px-20 border-b-1 border-t-1" style={{ borderColor: 'rgba(150, 150, 136, 0.3)' }}>
+            <h2 className="text-[clamp(2rem,5vw,3rem)] font-bold text-baseLight text-center dark:text-baseDark leading-snug font-[family-name:var(--font-noto-sans)]">
                 <span id="yes" className="inline-block mr-2">Crafting</span>
                 <span className="inline-block">, ideas into&nbsp;</span>
                 <span

@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { tools } from "@/data/all";
 
-const DISPLAY_COUNT = 6;
+const DISPLAY_COUNT = 10;
 
 gsap.registerPlugin(useGSAP);
 
@@ -59,21 +59,21 @@ export default function Tools() {
 
     return (
         <>
-            <div className="w-[90%] sm:w-[85%] md:w-[60%] mx-auto mt-2 sm:mt-20 flex items-center justify-baselin gap-2 text-baseLight dark:text-baseDark text-lg font-[family-name:var(--font-geist-sans)]">
-                {/* <span className="text-4xl sm:text-7xl font-light">{'{'}</span> */}
-                {/* <span className="font-semibold text-sm sm:text-xl">I'm working with</span> */}
+            {/* <div className="w-[90%] sm:w-[85%] md:w-[   0%] mx-auto mt-2 sm:mt-20 flex items-center justify-baselin gap-2 text-baseLight dark:text-baseDark text-lg font-[family-name:var(--font-noto-sans)]">
+                <span className="text-4xl sm:text-7xl font-light">{'{'}</span>
+                <span className="font-semibold text-sm sm:text-xl">I'm working with</span>
                 <span className="font-semibold text-sm sm:text-xl">Tools & Side Projects</span>
-                {/* <span className="text-4xl sm:text-7xl font-light">{'}'}</span> */}
-            </div>
+                <span className="text-4xl sm:text-7xl font-light">{'}'}</span>
+            </div> */}
 
             <div
                 ref={containerRef}
-                className="w-[90%] sm:w-[85%] md:w-[60%] mx-auto py-4 grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 place-items-center"
+                className="w-[90%] sm:w-[95%] hidden sm:grid mx-auto py-4 gap-4 grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 place-items-center"
             >
                 {visibleTools.map((name, idx) => (
                     <div
                         key={`${startIndex}-${idx}`}
-                        className="text-xs font-[family-name:var(--font-geist-mono)] font-bold px-4 py-2 shadow-sm bg-baseLight/50 dark:bg-baseDark/50 text-baseDark dark:text-baseLight w-full text-center"
+                        className="text-xs font-[family-name:var(--font-noto-sans)] font-bold px-4 py-2 shadow-sm bg-baseLight/50 dark:bg-baseDark/50 text-baseDark dark:text-baseLight w-full text-center"
                     >
                         <p className="tools">{name}</p>
                     </div>

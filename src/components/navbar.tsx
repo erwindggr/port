@@ -23,7 +23,7 @@ export default function Navbar() {
     const route = [
         {
             name: 'Project',
-            route: '/projects',
+            route: '/#projects',
         },
         {
             name: 'About',

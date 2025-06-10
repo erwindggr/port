@@ -141,19 +141,19 @@ export default function Hero() {
 
         gsap.fromTo(".react-line",
             { opacity: 0, x: -80 },
-            { opacity: 1, x: 0, duration: 0.55, ease: "power2.out", delay: 2.2 }
+            { opacity: 1, x: 0, duration: 0.55, ease: "power2.out", delay: 1 }
         );
 
         gsap.fromTo(".dotnet-line",
             { opacity: 0 },
-            { opacity: 1, duration: 1.2, ease: "power2.out", delay: 3 }
+            { opacity: 1, duration: 1.2, ease: "power2.out", delay: 1.5 }
         );
     });
 
     return (
-        <div className="w-full min-h-[95vh] flex items-center flex-col justify-center">
+        <div className="w-full min-h-[100vh] flex items-center flex-col justify-center">
             <div>
-                <div className="flex flex-wrap flex-col sm:flex-row gap-x-4">
+                <div className="flex flex-wrap flex-col sm:flex-row gap-x-4 font-[family-name:var(--font-noto-sans)]">
                     <p className="fullstack text-[clamp(2rem,7vw,10rem)] font-bold overflow-hidden break-words leading-tight">
                         FULLSTACK<span className="text-purple-600 dark:text-pink-800">✦</span>
                     </p>
@@ -161,7 +161,7 @@ export default function Hero() {
                         DEVELOPER
                     </p>
                 </div>
-                <div className="flex gap-x-5">
+                <div className="flex gap-x-5 font-[family-name:var(--font-noto-sans)]">
                     <h2 className="react-line text-[clamp(0.7rem,3vw,7rem)]"><span style={{ color: "#f29900" }}>•</span> <span style={{ color: "#58c4dc" }}>REACT</span> / NEXT.JS</h2>
                     <p className="dotnet-line text-[clamp(0.7rem,3vw,7rem)]">& <span style={{ color: "#5632d5" }}>.NET</span></p>
                 </div>

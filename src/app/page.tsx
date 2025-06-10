@@ -1,5 +1,5 @@
 import Hero from "@/components/hero";
-import Tools from "@/components/tools";
+// import Tools from "@/components/tools";
 import Intro from "@/components/intro";
 import Showcase from "@/components/showcase";
 import Projects from "@/components/projects";
@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
       <Intro />
       <Showcase />
-      <Tools />
+      {/* <Tools /> */}
       <Projects />
       <Erwin />
       <Footer />

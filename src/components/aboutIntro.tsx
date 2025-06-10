@@ -3,10 +3,10 @@
 import gsap from "gsap";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
+import { SplitText, ScrollTrigger } from "gsap/all";
 import { aboutMe } from "@/data/all";
 
-gsap.registerPlugin(useGSAP, SplitText);
+gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 
 export default function AboutIntro() {
     const headingRef = useRef<HTMLHeadingElement>(null);
@@ -16,16 +16,27 @@ export default function AboutIntro() {
         const split = new SplitText(headingRef.current, { type: "chars, words" });
 
         gsap.from(split.chars, {
-            y: -20,
-            rotateY: 90,
+            scrollTrigger: {
+                trigger: ".latest-header",
+                start: "top 80%",
+            },
+            y: 100,
             opacity: 0,
-            rotateX: -120,
-            stagger: 0.05,
-            duration: 0.6,
-            ease: "power3.out",
+            rotationX: 90,
+            transformOrigin: "top center",
+            ease: "back.out(1.7)",
+            stagger: {
+                each: 0.03,
+                from: "start",
+            },
+            duration: 1.2,
         });
 
         gsap.from(textRef.current, {
+            scrollTrigger: {
+                trigger: ".latest-header",
+                start: "top 80%",
+            },
             opacity: 0,
             duration: 5,
         })
@@ -33,13 +44,17 @@ export default function AboutIntro() {
 
     return (
         <div className="w-[90%] sm:w-[85%] md:w-[60%] mt-30 sm:mt-40 mx-auto">
-            <div className="border-b-1" style={{ borderColor: 'rgba(150, 150, 136, 0.3)' }}>
-                <h4 ref={headingRef} className="aboutHeading font-bold font-sans text-[clamp(1.9rem,4vw,5rem)] text-lightFooter dark:text-darkFooter">
-                    Hello, I'm Erwin Gunawan ✌️
-                </h4>
+
+            <div className="w-full mx-auto flex items-center justify-center mt-15">
+                <p
+                    ref={headingRef}
+                    className="experienceHeader text-[clamp(2rem,5vw,13rem)] font-bold text-lightFooter dark:text-darkFooter font-[family-name:var(--font-playFair-display)]"
+                >
+                    ABOUT ME
+                </p>
             </div>
 
-            <div ref={textRef} className="mt-10 flex justify-between gap-y-5 flex-col font-[family-name:var(--font-geist-mono)]" >
+            <div ref={textRef} className="mt-10 flex justify-between gap-y-3 sm:gap-y-6 flex-col font-[family-name:var(--font-noto-sans)]" >
                 {
                     aboutMe.map((about, idx) => (
                         <div key={idx}>
