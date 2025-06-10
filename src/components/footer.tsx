@@ -24,16 +24,16 @@ export default function Footer() {
     }, []);
 
     return (
-        <footer className="w-[90%] sm:w-[95%] mx-auto">
-            <div className="flex items-center justify-between gap-6 text-lightDarker dark:text-darkLighter text-xl sm:text-2xl mt-10 sm:mt-0 mb-18 sm:mb-8">
-                <div className="text-center sm:text-start text-lightDarker dark:text-darkLighter">
+        <footer className="w-[90%] sm:w-[95%] mx-auto ">
+            <div className="flex items-center justify-between gap-6 text-lightFooter dark:text-darkFooter text-xl sm:text-2xl mt-10 sm:mt-0 mb-18 sm:mb-8">
+                <div className="text-center sm:text-start text-lightFooter dark:text-darkFooter">
                     <p className="text-xs sm:text-lg uppercase tracking-widest font-bold font-mono">{`// Batam, Indonesia`}</p>
                 </div>
                 <div className="flex gap-1 sm:gap-5 items-center flex-col sm:flex-row">
                     <p className="text-xs sm:text-lg hidden sm:flex font-mono font-bold">[ CONTACT ] :</p>
                     <div className="flex gap-4">
                         <a
-                            href="https://linkedin.com/in/yourusername"
+                            href="https://linkedin.com/in/erwindggr"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="LinkedIn"
@@ -41,10 +41,10 @@ export default function Footer() {
                             <FaLinkedin className="hover:text-blue-500 transition-colors duration-200" />
                         </a>
                         <a
-                            href="mailto:youremail@example.com"
+                            href="mailto:erwin.dg8ts@gmail.com"
                             aria-label="Email"
                         >
-                            <FaEnvelope className="hover:text-rose-400 transition-colors duration-200" />
+                            <FaEnvelope className="hover:text-yellow-600 transition-colors duration-200" />
                         </a>
                     </div>
                 </div>

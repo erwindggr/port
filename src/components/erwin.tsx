@@ -8,7 +8,7 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrambleTextPlugin, ScrollTrigger, useGSAP);
 
-export default function Hero() {
+export default function Erwin() {
     const scrambleRef = useRef<HTMLParagraphElement>(null);
 
     useGSAP(() => {

@@ -3,6 +3,7 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText, ScrambleTextPlugin } from "gsap/all";
+import HeroMsg from "./heroMsg";
 
 gsap.registerPlugin(useGSAP, SplitText, ScrambleTextPlugin);
 
@@ -28,13 +29,13 @@ export default function Hero() {
         // Animate (last character of FULLSTACK)
         const charK = fullstack.chars[fullstack.chars.length - 1];
         gsap.set(charK, {
-            rotationX: -180,
+            rotationX: 180,
             transformOrigin: "bottom center",
         });
 
         tl.to(charK, {
             rotationX: 0,
-            duration: 1,
+            duration: 1.5,
             ease: "bounce.out",
         }, 0.2); // slight delay after 'F'
 
@@ -147,24 +148,6 @@ export default function Hero() {
             { opacity: 0 },
             { opacity: 1, duration: 1.2, ease: "power2.out", delay: 3 }
         );
-
-        gsap.fromTo(".description",
-            {
-                text: "",
-                opacity: 0,
-            },
-            {
-                opacity: 1,
-                duration: 1.8,
-                ease: "rough({ clamp: true, points: 20, template: none.out })",
-                delay: 3,
-                scrambleText: {
-                    text: '"I build & develop websites, front to back"',
-                    chars: '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
-                    revealDelay: 1,
-                },
-            }
-        );
     });
 
     return (
@@ -179,16 +162,12 @@ export default function Hero() {
                     </p>
                 </div>
                 <div className="flex gap-x-5">
-                    <h2 className="react-line text-[clamp(0.7rem,3vw,7rem)]"><span style={{color: "#f29900"}}>•</span> <span style={{color: "#58c4dc"}}>REACT</span> / NEXT.JS</h2>
-                    <p className="dotnet-line text-[clamp(0.7rem,3vw,7rem)]">& <span style={{color: "#5632d5"}}>.NET</span></p>
+                    <h2 className="react-line text-[clamp(0.7rem,3vw,7rem)]"><span style={{ color: "#f29900" }}>•</span> <span style={{ color: "#58c4dc" }}>REACT</span> / NEXT.JS</h2>
+                    <p className="dotnet-line text-[clamp(0.7rem,3vw,7rem)]">& <span style={{ color: "#5632d5" }}>.NET</span></p>
                 </div>
             </div>
 
-            <div className="mt-10 mb-10 md:mt-35 px-4 leading-relaxed">
-                <p className="description font-[family-name:var(--font-geist-mono)] text-[clamp(0.65rem,2.5vw,1.2rem)] text-muted italic text-lightDarker dark:text-darkLighter">
-                    *************
-                </p>
-            </div>
+            <HeroMsg />
         </div>
     );
 }
