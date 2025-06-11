@@ -13,12 +13,14 @@ export default function Projects() {
     const leftRefs = useRef<HTMLDivElement[]>([]);
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const [position, setPosition] = useState({ x: 0, y: 0 });
+    // const videoRef = useRef<HTMLVideoElement | null>(null);
+    const imageWrapperRef = useRef<HTMLDivElement | null>(null); // for <Image>
 
     leftRefs.current = [];
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
-            setPosition({ x: e.clientX - 200, y: e.clientY - 110 });
+            setPosition({ x: e.clientX - 210, y: e.clientY - 150 });
         };
 
         if (hoveredIndex !== null) {
@@ -34,17 +36,28 @@ export default function Projects() {
         setHoveredIndex(index);
         gsap.to(leftRefs.current[index], {
             x: 20,
-            duration: 0.25,
-            ease: "power2.out",
+            duration: 0.5,
+            ease: "back.out(1.7)",
         });
+
+        gsap.fromTo(
+            imageWrapperRef.current,
+            { opacity: 0.5, scale: 0.01, },
+            {
+                scale: 1,
+                opacity: 1,
+                duration: 0.35,
+                ease: "power3.out",
+            }
+        );
     };
 
     const handleLeave = (index: number) => {
         setHoveredIndex(null);
         gsap.to(leftRefs.current[index], {
             x: 0,
-            duration: 0.3,
-            ease: "power2.inOut",
+            duration: 0.5,
+            ease: "back.out(1.7)",
         });
     };
 
@@ -69,10 +82,24 @@ export default function Projects() {
             duration: 1.2,
         });
 
+        // 🔥 Add scroll shrink effect
+        gsap.to(".other-header", {
+            scrollTrigger: {
+                trigger: ".other-header",
+                start: "center center",
+                end: "bottom top",
+                scrub: true,
+            },
+            scale: 0.4,
+            y: 30,
+            transformOrigin: "bottom left",
+            ease: "none",
+        });
+
         gsap.from(".content", {
             scrollTrigger: {
                 trigger: ".other-header",
-                start: "bottom 30%",
+                start: "center center",
                 toggleActions: "play none none none",
             },
             opacity: 0,
@@ -88,64 +115,79 @@ export default function Projects() {
         });
     });
 
-
     return (
-        <section className="w-[90%] sm:w-[95%] mx-auto">
+        <section className="w-[90%] sm:w-[95%] mx-auto hidden lg:block">
             <div className="w-full relative z-[-1] mb-0 xl:mb-[-50]">
-                <h2 className="other-header text-center my-30 text-[clamp(3.5rem,7vw,10rem)] font-bold font-[family-name:var(--font-noto-sans)] text-lightFooter dark:text-darkLighter">Others</h2>
+                <h2 className="other-header mb-30 text-[clamp(3.5rem,7vw,10rem)] font-bold font-[family-name:var(--font-noto-sans)]">Projects &#x2935;</h2>
             </div>
             {projects.map((project, index) => (
                 <div
                     key={index}
                     onMouseEnter={() => handleEnter(index)}
                     onMouseLeave={() => handleLeave(index)}
-                    className="content flex flex-col md:flex-row justify-between border-b border-[rgba(150,150,136,0.5)] py-10 sm:py-20 hover:cursor-pointer hover:text-darkLighter dark:hover:text-lightDarker "
+                    className="content flex flex-col md:flex-row justify-between border-b border-[rgba(150,150,136,0.5)] py-6 sm:py-8 hover:cursor-pointer text-darkLighter dark:text-lightDarker hover:text-baseLight dark:hover:text-baseDark"
                 >
                     <div
                         ref={(el: HTMLDivElement | null) => {
                             leftRefs.current[index] = el!;
-                        }} className=""
+                        }}
+                        className="flex flex-row w-full items-center justify-between flex-wrap sm:flex-nowrap"
                     >
-                        <h3 className="text-[clamp(2rem,3vw,6rem)] font-semibold  font-[family-name:var(--font-noto-sans)]">
+                        <h3 className="w-3/6 text-base sm:text-4xl font-semibold font-[family-name:var(--font-noto-sans)] min-w-[8rem]">
                             {project.title}
                         </h3>
-                        <p className="text-[clamp(0.8rem,1vw,1rem)]  font-[family-name:var(--font-noto-sans)]">
-                            {project.tags}
-                        </p>
+                        <div className="flex w-3/6 mr-8">
+                            <p className="text-sm sm:text-base font-[family-name:var(--font-noto-sans)] flex-1">
+                                {project.description}
+                            </p>
+                            <p className="text-sm sm:text-base font-[family-name:var(--font-noto-sans)] flex-1">
+                                {project.tags}
+                            </p>
+                            <p className="text-sm sm:text-base font-[family-name:var(--font-noto-sans)] flex-1 text-right">
+                                {project.year}
+                            </p>
+                        </div>
                     </div>
                 </div>
             ))}
 
+
             {hoveredIndex !== null && (
                 <div
-                    className="fixed z-50 pointer-events-none transition-opacity duration-200"
+                    className="fixed z-50 pointer-events-none"
                     style={{ left: position.x + 20, top: position.y + 20 }}
                 >
-                    <div className="w-96 h-60 relative overflow-hidden rounded-md bg-white dark:bg-zinc-900">
+                    <div className="w-100 rounded-md p-2 relative overflow-hidden bg-baseLight dark:bg-baseDark">
                         {/* Media */}
-                        {projects[hoveredIndex].video ? (
-                            <video
-                                src={projects[hoveredIndex].video}
-                                autoPlay
-                                loop
-                                muted
-                                playsInline
-                                className="w-full h-full object-cover"
-                            />
-                        ) : (
-                            <Image
-                                src={projects[hoveredIndex].image}
-                                alt={projects[hoveredIndex].title}
-                                fill
-                                className="object-cover"
-                                priority
-                            />
-                        )}
-
-                        {/* Overlay info */}
-                        <div className="absolute font-[family-name:var(--font-noto-sans)] bottom-0 left-0 w-full bg-baseDark dark:bg-baseLight  text-xs sm:text-sm px-3 py-2">
-                            <p>{projects[hoveredIndex].description}</p>
-                            <p className="font-semibold">{projects[hoveredIndex].year}</p>
+                        <div className="relative w-full" style={{ aspectRatio: '16 / 10' }}>
+                            {projects[hoveredIndex].video ? (
+                                <div
+                                    ref={imageWrapperRef}
+                                    className="absolute top-0 left-0 w-full h-full object-cover rounded-sm"
+                                >
+                                    <video
+                                        src={projects[hoveredIndex].video}
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                        className="absolute inline-block top-0 left-0 w-full h-full object-cover rounded-sm"
+                                    />
+                                </div>
+                            ) : (
+                                <div
+                                    ref={imageWrapperRef}
+                                    className="absolute top-0 left-0 w-full h-full object-cover rounded-sm"
+                                >
+                                    <Image
+                                        src={projects[hoveredIndex].image}
+                                        alt={projects[hoveredIndex].title}
+                                        fill
+                                        className="object-cover"
+                                        priority
+                                    />
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>

@@ -17,7 +17,7 @@ export default function AboutIntro() {
 
         gsap.from(split.chars, {
             scrollTrigger: {
-                trigger: ".latest-header",
+                trigger: ".aboutHeader",
                 start: "top 80%",
             },
             y: 100,
@@ -34,11 +34,19 @@ export default function AboutIntro() {
 
         gsap.from(textRef.current, {
             scrollTrigger: {
-                trigger: ".latest-header",
+                trigger: ".aboutText",
                 start: "top 80%",
             },
+            y: 100,
             opacity: 0,
-            duration: 5,
+            rotationX: 90,
+            transformOrigin: "top center",
+            ease: "back.out(1.7)",
+            stagger: {
+                each: 0.03,
+                from: "start",
+            },
+            duration: 1.2,
         })
     });
 
@@ -48,13 +56,13 @@ export default function AboutIntro() {
             <div className="w-full mx-auto flex items-center justify-center mt-15">
                 <p
                     ref={headingRef}
-                    className="experienceHeader text-[clamp(2rem,5vw,13rem)] font-bold text-lightFooter dark:text-darkFooter font-[family-name:var(--font-playFair-display)]"
+                    className="aboutHeader text-[clamp(2rem,5vw,13rem)] font-bold text-lightFooter dark:text-darkFooter font-[family-name:var(--font-playFair-display)]"
                 >
                     ABOUT ME
                 </p>
             </div>
 
-            <div ref={textRef} className="mt-10 flex justify-between gap-y-3 sm:gap-y-6 flex-col font-[family-name:var(--font-noto-sans)]" >
+            <div ref={textRef} className="aboutText mt-10 flex justify-between gap-y-3 sm:gap-y-6 flex-col font-[family-name:var(--font-noto-sans)]" >
                 {
                     aboutMe.map((about, idx) => (
                         <div key={idx}>

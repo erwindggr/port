@@ -18,25 +18,25 @@ export default function Erwin() {
             scrambleText: {
                 text: "ERWIN GUNAWAN",
                 chars: "ERWINDGGR",
-                revealDelay: 0.5,
+                // revealDelay: 1,
             },
             duration: 1,
             ease: "none",
             scrollTrigger: {
                 trigger: scrambleRef.current,
-                start: "top 80%", // More reliable
+                start: "top 90%",
                 once: true,
             },
         });
     });
 
     return (
-        <div className="w-full mx-auto flex items-center justify-center mt-15 sm:mt-30">
+        <div className="w-[90%] sm:w-[95%] rounded-xl mx-auto flex items-center justify-center mt-15 sm:mt-30">
             <p
                 ref={scrambleRef}
                 className="text-[clamp(2rem,10vw,13rem)] font-bold text-lightFooter dark:text-darkFooter font-[family-name:var(--font-playFair-display)]"
             >
-                ** **
+                ** ** **
             </p>
         </div>
     );

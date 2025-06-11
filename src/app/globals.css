@@ -14,17 +14,17 @@
 
 @theme {
   --color-baseLight: #020504;
-  --color-baseDark: #fffce1;
+  --color-baseDark: #f5f5f7;
   --color-lightDarker: #454545;
-  --color-darkLighter: #ababab;
-  --color-darkFooter: #3b3a3a;
-  --color-lightFooter: #cecfc8;
+  --color-darkLighter: #a4aab6;
+  --color-darkFooter: #474747;
+  --color-lightFooter: #dee0e4;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #090a05;
-    --foreground: #fffce1;
+    --foreground: #f5f5f7;
   }
 }
 

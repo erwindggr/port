@@ -30,7 +30,7 @@ export default function SideBar() {
             </button>
 
             {/* Drawer */}
-            <div className={`fixed top-0 left-0 h-full w-3/4 max-w-xs bg-white dark:bg-black z-40 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+            <div className={`fixed top-0 left-0 h-full w-3/4 max-w-xs bg-white dark:bg-black z-80 transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 <div className="h-full justify-between flex flex-col">
                     <div className="flex flex-col gap-6 pt-20 pl-10">
                         <Link href="/" className="text-3xl text-baseLight dark:text-baseDark font-semibold font-[family-name:var(--font-geist-sans)]">Project</Link>

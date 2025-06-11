@@ -24,8 +24,8 @@ export default function Footer() {
     }, []);
 
     return (
-        <footer className="w-[90%] sm:w-[95%] mx-auto ">
-            <div className="flex items-center justify-between gap-6 text-lightFooter dark:text-darkFooter text-xl sm:text-2xl mt-10 sm:mt-0 mb-18 sm:mb-8">
+        <footer className="w-[90%] sm:w-[95%] mx-auto border-b-5 border-lightFooter dark:border-darkFooter mb-10">
+            <div className="flex items-center justify-between gap-6 text-lightFooter dark:text-darkFooter text-xl sm:text-2xl py-5">
                 <div className="text-center sm:text-start text-lightFooter dark:text-darkFooter">
                     <p className="text-xs sm:text-lg uppercase tracking-widest font-bold font-mono">{`// Batam, Indonesia`}</p>
                 </div>
