@@ -4,10 +4,13 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText, ScrambleTextPlugin } from "gsap/all";
 import HeroMsg from "./heroMsg";
+import { useRef } from "react";
 
 gsap.registerPlugin(useGSAP, SplitText, ScrambleTextPlugin);
 
 export default function Hero() {
+    const arrowWrapperRef = useRef<HTMLAnchorElement>(null);
+
     useGSAP(() => {
         const tl = gsap.timeline();
 
@@ -78,12 +81,14 @@ export default function Hero() {
             tl.fromTo(word,
                 {
                     rotationY: 1080,
+                    rotateZ: -5,
                     y: -50,
                     opacity: 0,
                     transformOrigin: "center center",
                 },
                 {
                     rotationY: 0,
+                    rotateZ: 0,
                     y: 0,
                     opacity: 1,
                     duration: 1.2,
@@ -139,35 +144,48 @@ export default function Hero() {
             },
         });
 
-        gsap.fromTo(".react-line",
-            { opacity: 0, x: -80 },
-            { opacity: 1, x: 0, duration: 0.55, ease: "power2.out", delay: 1 }
+        gsap.fromTo(
+            arrowWrapperRef.current,
+            { opacity: 0, y: -5 },
+            {
+                opacity: 1,
+                y: -5,
+                duration: 0.8,
+                delay: 1.8,
+                ease: "power1.out",
+            }
         );
 
-        gsap.fromTo(".dotnet-line",
-            { opacity: 0 },
-            { opacity: 1, duration: 1.2, ease: "power2.out", delay: 1.5 }
-        );
+        gsap.to(arrowWrapperRef.current, {
+            y: -15,
+            duration: 0.8,
+            ease: "power1.inOut",
+            repeat: -1,
+            yoyo: true,
+            delay: 1.9,
+        });
     });
 
     return (
-        <div className="w-full min-h-[100vh] flex items-center flex-col justify-center">
-            <div>
-                <div className="flex flex-wrap flex-col sm:flex-row gap-x-4 font-[family-name:var(--font-noto-sans)]">
-                    <p className="fullstack text-[clamp(2rem,7vw,10rem)] font-bold overflow-hidden break-words leading-tight">
+        <div className="relative w-[90%] mx-auto min-h-[100vh] flex items-center flex-col justify-around gap-y-5 sm:gap-y-30 font-[family-name:var(--font-noto-sans)]">
+            <div className="py-10 w-full" />
+            <div className="w-full">
+                <div className="flex flex-wrap flex-col gap-x-4 ">
+                    <p className="fullstack text-[clamp(3.2rem,10vw,10rem)] font-bold overflow-hidden break-words leading-tight mb-[-20] lg:mb-[-50]">
                         FULLSTACK<span className="text-purple-600 dark:text-pink-800">✦</span>
                     </p>
-                    <p className="developer text-[clamp(2rem,7vw,10rem)] font-bold overflow-hidden break-words leading-tight">
+
+                    <p className="developer text-[#31363F] text-end text-[clamp(3.2rem,10vw,10rem)] font-bold overflow-hidden break-words leading-tight">
                         DEVELOPER
                     </p>
                 </div>
-                <div className="flex gap-x-5 font-[family-name:var(--font-noto-sans)]">
-                    <h2 className="react-line text-[clamp(0.7rem,3vw,7rem)]"><span style={{ color: "#f29900" }}>•</span> <span style={{ color: "#58c4dc" }}>REACT</span> / NEXT.JS</h2>
-                    <p className="dotnet-line text-[clamp(0.7rem,3vw,7rem)]">& <span style={{ color: "#5632d5" }}>.NET</span></p>
-                </div>
             </div>
-
             <HeroMsg />
+            <div className="w-full flex flex-col items-center pb-5">
+                <a ref={arrowWrapperRef} href="#projects" className="text-sm font-semibold flex flex-col items-center gap-2 hover:text-darkFooter font-[family-name:var(--font-geist-mono)]">
+                    Explore my work 👇
+                </a>
+            </div>
         </div>
     );
 }

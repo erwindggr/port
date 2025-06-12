@@ -116,16 +116,16 @@ export default function Projects() {
     });
 
     return (
-        <section className="w-[90%] sm:w-[95%] mx-auto hidden lg:block">
+        <section className="w-[90%] sm:w-[95%] mx-auto hidden lg:block font-[family-name:var(--font-noto-sans)]">
             <div className="w-full relative z-[-1] mb-0 xl:mb-[-50]">
-                <h2 className="other-header mb-30 text-[clamp(3.5rem,7vw,10rem)] font-bold font-[family-name:var(--font-noto-sans)]">Projects &#x2935;</h2>
+                <h2 className="other-header mb-30 text-[clamp(3.5rem,7vw,10rem)] font-bold ">Projects &#x2935;</h2>
             </div>
             {projects.map((project, index) => (
                 <div
                     key={index}
                     onMouseEnter={() => handleEnter(index)}
                     onMouseLeave={() => handleLeave(index)}
-                    className="content flex flex-col md:flex-row justify-between border-b border-[rgba(150,150,136,0.5)] py-6 sm:py-8 hover:cursor-pointer text-darkLighter dark:text-lightDarker hover:text-baseLight dark:hover:text-baseDark"
+                    className="content flex flex-col md:flex-row justify-between border-b border-[rgba(150,150,136,0.5)] py-15 hover:cursor-pointer text-darkLighter dark:text-lightDarker hover:text-baseLight dark:hover:text-baseDark"
                 >
                     <div
                         ref={(el: HTMLDivElement | null) => {
@@ -154,7 +154,7 @@ export default function Projects() {
 
             {hoveredIndex !== null && (
                 <div
-                    className="fixed z-50 pointer-events-none"
+                    className="fixed z-50 pointer-events-none font-[family-name:var(--font-noto-sans)]"
                     style={{ left: position.x + 20, top: position.y + 20 }}
                 >
                     <div className="w-100 rounded-md p-2 relative overflow-hidden bg-baseLight dark:bg-baseDark">
@@ -188,6 +188,13 @@ export default function Projects() {
                                     />
                                 </div>
                             )}
+                            {/* "View" badge in the center */}
+                            <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none">
+                                <div className="bg-black/70 text-white text-sm px-4 py-2 rounded-full font-semibold">
+                                    View
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

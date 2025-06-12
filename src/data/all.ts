@@ -1,9 +1,11 @@
 const messages = [
-  `"Hi, I'm Erwin — a fullstack developer crafting fast, modern web apps with React and Next.js."`,
-  `"I build complete web experiences — frontend polish meets backend power."`,
-  `"Turning ideas into interactive, scalable websites is what I do best."`,
-  `"From dynamic UIs to structured backend logic — I bring it all together."`,
-  `"Let's build something real — clean, responsive, and built to last."`,
+  `"Building efficient web applications — with style."`,
+  `"Delivering fast, responsive apps"`,
+  `"Designing smooth, reliable interfaces"`,
+  `"Creating web experiences that just work."`,
+  `"Making web apps that feel good — and run even better."`,
+  `"Simple, effective solutions — with a sense of design."`,
+  `"Shipping fast, user-friendly web apps"`
 ];
 
 const tools = [
@@ -29,7 +31,7 @@ const tools = [
 
 const projects = [
   {
-    title: "SmartVision",
+    title: "Smart Vision",
     year: 2025,
     description: "Landing Page",
     tags: "Front-end Development",

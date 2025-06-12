@@ -93,7 +93,7 @@ export default function Navbar() {
                     {
                         route.map((item, index) => (
                             <Link key={index} href={item.route}>
-                                <p className="text-lg px-4 py-2 text-lightDarker dark:text-darkLighter hover:text-baseLight hover:dark:text-baseDark font-semibold font-[family-name:var(--font-geist-sans)]">{item.name}</p>
+                                <p className="text-lg px-4 py-2 text-lightDarker dark:text-darkLighter hover:text-baseLight hover:dark:text-baseDark font-semibold font-[family-name:var(--font-noto-sans)]">{item.name}</p>
                             </Link>
                         ))
                     }

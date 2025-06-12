@@ -17,7 +17,7 @@ export default function Erwin() {
         gsap.to(scrambleRef.current, {
             scrambleText: {
                 text: "ERWIN GUNAWAN",
-                chars: "ERWINDGGR",
+                chars: "IVXZ",
                 // revealDelay: 1,
             },
             duration: 1,
