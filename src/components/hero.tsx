@@ -167,10 +167,10 @@ export default function Hero() {
     });
 
     return (
-        <div className="relative w-[90%] mx-auto min-h-[100vh] flex items-center flex-col justify-around gap-y-5 sm:gap-y-30 font-[family-name:var(--font-noto-sans)]">
-            <div className="py-10 w-full" />
+        <div className="relative w-[90%] mx-auto h-[100vh] flex items-center flex-col justify-around gap-y-5 font-[family-name:var(--font-noto-sans)]">
+            <div className="py-0 w-full" />
             <div className="w-full">
-                <div className="flex flex-wrap flex-col gap-x-4 ">
+                <div className="flex flex-wrap flex-col">
                     <p className="fullstack text-[clamp(3.2rem,10vw,10rem)] font-bold overflow-hidden break-words leading-tight mb-[-20] lg:mb-[-50]">
                         FULLSTACK<span className="text-purple-600 dark:text-pink-800">✦</span>
                     </p>

@@ -46,7 +46,7 @@ export default function Intro() {
                 end: "bottom top",
                 scrub: true,
             },
-            scale: 2,
+            scale: 3,
             transformOrigin: "center",
             ease: "none",
         });
