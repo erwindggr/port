@@ -5,8 +5,8 @@ import ProjectImage from "@/components/projects/projectImage";
 import Erwin from "@/components/erwin";
 import Footer from "@/components/footer";
 
-export default function BasicPOS() {
-    const title = "Basic POS";
+export default function KopiO() {
+    const title = "Kopi O";
     const project = detailedProjects.find((p) => p.title === title);
 
     return (

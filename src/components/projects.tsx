@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText, ScrollTrigger } from "gsap/all";
 import Image from "next/image";
+import Link from "next/link";
 
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 
@@ -40,16 +41,20 @@ export default function Projects() {
             ease: "back.out(1.7)",
         });
 
-        gsap.fromTo(
-            imageWrapperRef.current,
-            { opacity: 0.5, scale: 0.01, },
-            {
-                scale: 1,
-                opacity: 1,
-                duration: 0.35,
-                ease: "power3.out",
+        requestAnimationFrame(() => {
+            if (imageWrapperRef.current) {
+                gsap.fromTo(
+                    imageWrapperRef.current,
+                    { opacity: 0.5, scale: 0.01 },
+                    {
+                        scale: 1,
+                        opacity: 1,
+                        duration: 0.35,
+                        ease: "power3.out",
+                    }
+                );
             }
-        );
+        });
     };
 
     const handleLeave = (index: number) => {
@@ -121,34 +126,35 @@ export default function Projects() {
                 <h2 className="other-header mb-30 text-[clamp(3.5rem,7vw,10rem)] font-bold ">Projects &#x2935;</h2>
             </div>
             {projects.map((project, index) => (
-                <div
-                    key={index}
-                    onMouseEnter={() => handleEnter(index)}
-                    onMouseLeave={() => handleLeave(index)}
-                    className="content flex flex-col md:flex-row justify-between border-b border-[rgba(150,150,136,0.5)] py-15 hover:cursor-pointer text-darkLighter dark:text-lightDarker hover:text-baseLight dark:hover:text-baseDark"
-                >
+                <Link href={project.url} key={index}>
                     <div
-                        ref={(el: HTMLDivElement | null) => {
-                            leftRefs.current[index] = el!;
-                        }}
-                        className="flex flex-row w-full items-center justify-between flex-wrap sm:flex-nowrap"
+                        onMouseEnter={() => handleEnter(index)}
+                        onMouseLeave={() => handleLeave(index)}
+                        className="content flex flex-col md:flex-row justify-between border-b border-[rgba(150,150,136,0.5)] py-15 hover:cursor-pointer text-darkLighter dark:text-lightDarker hover:text-baseLight dark:hover:text-baseDark"
                     >
-                        <h3 className="w-3/6 text-base sm:text-4xl font-semibold font-[family-name:var(--font-noto-sans)] min-w-[8rem]">
-                            {project.title}
-                        </h3>
-                        <div className="flex w-3/6 mr-8">
-                            <p className="text-sm sm:text-base font-[family-name:var(--font-noto-sans)] flex-1">
-                                {project.description}
-                            </p>
-                            <p className="text-sm sm:text-base font-[family-name:var(--font-noto-sans)] flex-1">
-                                {project.tags}
-                            </p>
-                            <p className="text-sm sm:text-base font-[family-name:var(--font-noto-sans)] flex-1 text-right">
-                                {project.year}
-                            </p>
+                        <div
+                            ref={(el: HTMLDivElement | null) => {
+                                leftRefs.current[index] = el!;
+                            }}
+                            className="flex flex-row w-full items-center justify-between flex-wrap sm:flex-nowrap"
+                        >
+                            <h3 className="w-3/6 text-base sm:text-4xl font-semibold font-[family-name:var(--font-noto-sans)] min-w-[8rem]">
+                                {project.title}
+                            </h3>
+                            <div className="flex w-3/6 mr-8">
+                                <p className="text-sm sm:text-base font-[family-name:var(--font-noto-sans)] flex-1">
+                                    {project.description}
+                                </p>
+                                <p className="text-sm sm:text-base font-[family-name:var(--font-noto-sans)] flex-1">
+                                    {project.tags}
+                                </p>
+                                <p className="text-sm sm:text-base font-[family-name:var(--font-noto-sans)] flex-1 text-right">
+                                    {project.year}
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </Link>
             ))}
 
 
@@ -179,13 +185,21 @@ export default function Projects() {
                                     ref={imageWrapperRef}
                                     className="absolute top-0 left-0 w-full h-full object-cover rounded-sm"
                                 >
-                                    <Image
+                                    {/* <Image
                                         src={projects[hoveredIndex].image}
                                         alt={projects[hoveredIndex].title}
                                         fill
                                         className="object-cover"
                                         priority
+                                    /> */}
+                                    <Image
+                                        src={projects[hoveredIndex].image}
+                                        alt={projects[hoveredIndex].title}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                        className="object-cover"
                                     />
+
                                 </div>
                             )}
                             {/* "View" badge in the center */}
