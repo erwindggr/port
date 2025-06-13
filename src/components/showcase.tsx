@@ -97,8 +97,8 @@ export default function Showcase() {
     });
 
     return (
-        <div id="projects" className="w-full min-h-screen mt-40 sm:mt-45">
-            <div className="w-[90%] sm:w-[95%] mx-auto relative z-5 mb-0 ">
+        <div id="projects" className="w-full min-h-screen mt-40 sm:mt-50">
+            <div className="w-[90%] sm:w-[95%] mx-auto relative z-5 mb-0 sm:mb-[-20]">
                 <h2 className="latest-header text-[clamp(2.5rem,7vw,10rem)] font-bold font-[family-name:var(--font-noto-sans)]">Recent work &#x2198;</h2>
             </div>
 
@@ -136,7 +136,7 @@ export default function Showcase() {
                     </div>
 
                     <div className="flex justify-end lg:justify-start mt-10 sm:ml-15 mb-10">
-                        <PortButton text="Learn More" />
+                        <PortButton text="Learn More" href="/basicpos" />
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@
 import gsap from "gsap";
 import { useRef } from "react";
 
-export default function PortButton({ text }: { text: string }) {
+export default function PortButton({ text, href }: { text: string, href: string }) {
     const btnRef = useRef<HTMLAnchorElement>(null);
 
     const handleEnter = () => {
@@ -31,7 +31,7 @@ export default function PortButton({ text }: { text: string }) {
                 ref={btnRef}
                 onMouseEnter={handleEnter}
                 onMouseLeave={handleLeave}
-                href="#"
+                href={href}
                 className="px-5 py-3 sm:px-7 sm:py-4 dark:active:text-darkFooter rounded-full font-bold relative border-2 border-baseLight dark:border-baseDark dark:active:border-darkFooter transition-colors duration-200"
                 style={{ display: "inline-block" }}
             >
