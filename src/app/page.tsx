@@ -5,7 +5,8 @@ import Showcase from "@/components/showcase";
 import ProjectsMobile from "@/components/projectsMobile";
 import Projects from "@/components/projects";
 import Footer from "@/components/footer";
-import Erwin from "@/components/erwin";
+// import Erwin from "@/components/erwin";
+import MarqueeText from "@/components/contact/marquee";
 
 export default function Home() {
   return (
@@ -18,7 +19,10 @@ export default function Home() {
       {/* <Tools /> */}
       <ProjectsMobile />
       <Projects />
-      <Erwin />
+      <div className="mt-20">
+        <MarqueeText />
+      </div>
+      {/* <Erwin /> */}
       <Footer />
       {/* <div className="w-full min-h-screen"></div> */}
       {/* Add more components as needed */}

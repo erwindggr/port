@@ -5,6 +5,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText, ScrollTrigger } from "gsap/all";
+import Link from "next/link";
 
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
 
@@ -46,7 +47,7 @@ export default function ProjectsMobile() {
             ease: "none",
         });
 
-        gsap.utils.toArray(".project-card").forEach((card: any) => {
+        gsap.utils.toArray<HTMLElement>(".project-card").forEach((card) => {
             gsap.from(card, {
                 scrollTrigger: {
                     trigger: card,
@@ -69,8 +70,8 @@ export default function ProjectsMobile() {
             </div>
 
             <div className="flex flex-col gap-16 w-[90%] sm:w-[95%] mx-auto">
-                {projects.map((project, index) => (
-                    <div key={index} className="project-card flex flex-col gap-4">
+                {projects.slice(1, 5).map((project, index) => (
+                    <Link key={index} className="project-card flex flex-col gap-4" href={project.url}>
                         {/* Image/Video Preview */}
                         <div className="w-full overflow-hidden rounded-md aspect-[16/10]">
                             {project.video ? (
@@ -104,8 +105,16 @@ export default function ProjectsMobile() {
                                 <p>{project.year}</p>
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
+                <div className="mt-5 flex justify-center">
+                    <Link
+                        href="/projects"
+                        className="px-6 py-2 rounded-full border-2 border-current font-semibold"
+                    >
+                        See more
+                    </Link>
+                </div>
             </div>
         </section>
     );

@@ -2,11 +2,12 @@ import { detailedProjects } from "@/data/all";
 import ProjectHead from "@/components/projects/projectHead";
 import ProjectOverview from "@/components/projects/projectOverview";
 import ProjectImage from "@/components/projects/projectImage";
-import Erwin from "@/components/erwin";
+// import Erwin from "@/components/erwin";
+import MarqueeText from "@/components/contact/marquee";
 import Footer from "@/components/footer";
 
-export default function SmartVision() {
-    const title = "SmartVision";
+export default function BasicPOS() {
+    const title = "Basic POS";
     const project = detailedProjects.find((p) => p.title === title);
 
     return (
@@ -26,7 +27,10 @@ export default function SmartVision() {
                         tech={project.tech}
                     />
                     <ProjectImage src={project.src} />
-                    <Erwin />
+                    {/* <Erwin /> */}
+                    <div className="mt-20">
+                        <MarqueeText />
+                    </div>
                     <Footer />
                 </div>
             ) : (

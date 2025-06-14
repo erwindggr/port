@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display, Cormorant_Garamond, Noto_Sans } from "next/font/google";
 import Navbar from "@/components/navbar";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,7 +21,7 @@ const playFairDisplay = Playfair_Display({
 
 const cormorantGaramond = Cormorant_Garamond({
   variable: "--font-cormorant-garamond",
-  weight: [ "300", "400", "500", "600", "700" ],
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
 });
 
@@ -44,8 +45,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playFairDisplay.variable} ${cormorantGaramond.variable} ${notoSans.variable} antialiased`}
       >
+        <Toaster position="bottom-center" toastOptions={{ duration: 2000 }} />
         <Navbar />
-        <div className="grain-overlay" />
+        <div />
         {children}
       </body>
     </html>

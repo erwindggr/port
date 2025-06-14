@@ -56,7 +56,7 @@ export default function AboutIntro() {
             <div className="w-full mx-auto flex items-center justify-center mt-15">
                 <p
                     ref={headingRef}
-                    className="aboutHeader text-[clamp(2rem,5vw,13rem)] font-bold text-lightFooter dark:text-darkFooter font-[family-name:var(--font-playFair-display)]"
+                    className="aboutHeader text-[clamp(2rem,5vw,13rem)] font-light font-[family-name:var(--font-geist-sans)]"
                 >
                     ABOUT ME
                 </p>

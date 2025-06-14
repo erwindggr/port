@@ -2,11 +2,12 @@ import { detailedProjects } from "@/data/all";
 import ProjectHead from "@/components/projects/projectHead";
 import ProjectOverview from "@/components/projects/projectOverview";
 import ProjectImage from "@/components/projects/projectImage";
+import MarqueeText from "@/components/contact/marquee";
 import Erwin from "@/components/erwin";
 import Footer from "@/components/footer";
 
-export default function RecipePal() {
-    const title = "Recipe Pal";
+export default function KopiO() {
+    const title = "Kopi O";
     const project = detailedProjects.find((p) => p.title === title);
 
     return (
@@ -26,6 +27,9 @@ export default function RecipePal() {
                         tech={project.tech}
                     />
                     <ProjectImage src={project.src} />
+                    <div className="mt-20">
+                        <MarqueeText />
+                    </div>
                     <Erwin />
                     <Footer />
                 </div>

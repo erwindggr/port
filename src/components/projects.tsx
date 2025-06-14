@@ -125,7 +125,7 @@ export default function Projects() {
             <div className="w-full relative z-[-1] mb-0 xl:mb-[-50]">
                 <h2 className="other-header mb-30 text-[clamp(3.5rem,7vw,10rem)] font-bold ">Projects &#x2935;</h2>
             </div>
-            {projects.map((project, index) => (
+            {projects.slice(1, 5).map((project, index) => (
                 <Link href={project.url} key={index}>
                     <div
                         onMouseEnter={() => handleEnter(index)}
@@ -157,6 +157,14 @@ export default function Projects() {
                 </Link>
             ))}
 
+            <div className="mt-20 flex justify-center">
+                <Link
+                    href="/projects"
+                    className="px-6 py-2 rounded-full border-2 border-current font-semibold"
+                >
+                    See more
+                </Link>
+            </div>
 
             {hoveredIndex !== null && (
                 <div

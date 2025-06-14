@@ -136,7 +136,7 @@ export default function Showcase() {
                     </div>
 
                     <div className="flex justify-end lg:justify-start mt-10 sm:ml-15 mb-10">
-                        <PortButton text="Learn More" href="/basicpos" />
+                        <PortButton text="Learn More" href="/projects/basicpos" />
                     </div>
                 </div>
             </div>

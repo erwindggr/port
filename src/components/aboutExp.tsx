@@ -57,7 +57,7 @@ export default function AboutExperience() {
             <div className="w-full mx-auto flex items-center justify-center mt-15">
                 <p
                     ref={expHeadingRef}
-                    className="experienceHeader text-[clamp(2rem,5vw,13rem)] font-bold text-lightFooter dark:text-darkFooter font-[family-name:var(--font-playFair-display)]"
+                    className="experienceHeader text-[clamp(2rem,5vw,13rem)] font-light font-[family-name:var(--font-geist-sans)]"
                 >
                     EXPERIENCE
                 </p>

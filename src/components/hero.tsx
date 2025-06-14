@@ -9,7 +9,7 @@ import { useRef } from "react";
 gsap.registerPlugin(useGSAP, SplitText, ScrambleTextPlugin);
 
 export default function Hero() {
-    const arrowWrapperRef = useRef<HTMLAnchorElement>(null);
+    const arrowWrapperRef = useRef<HTMLDivElement | null>(null);
 
     useGSAP(() => {
         const tl = gsap.timeline();
@@ -171,20 +171,27 @@ export default function Hero() {
             <div className="py-0 w-full" />
             <div className="w-full">
                 <div className="flex flex-wrap flex-col">
-                    <p className="fullstack text-[clamp(3.2rem,10vw,10rem)] font-bold overflow-hidden break-words leading-tight mb-[-20] lg:mb-[-50]">
+                    <p className="fullstack text-[clamp(3.2rem,10vw,20rem)] font-bold overflow-hidden break-words leading-tight mb-[-20] lg:mb-[-50]">
                         FULLSTACK<span className="text-purple-600 dark:text-pink-800">✦</span>
                     </p>
 
-                    <p className="developer text-[#31363F] text-end text-[clamp(3.2rem,10vw,10rem)] font-bold overflow-hidden break-words leading-tight">
+                    <p className="developer text-[#31363F] text-end text-[clamp(3.2rem,10vw,20rem)] font-bold overflow-hidden break-words leading-tight">
                         DEVELOPER
                     </p>
                 </div>
             </div>
             <HeroMsg />
-            <div className="w-full flex flex-col items-center pb-5">
-                <a ref={arrowWrapperRef} href="#projects" className="text-sm font-semibold flex flex-col items-center gap-2 hover:text-darkFooter font-[family-name:var(--font-geist-mono)]">
-                    Explore my work 👇
-                </a>
+            <div
+                ref={arrowWrapperRef}
+                onClick={() => {
+                    const el = document.getElementById("projects");
+                    if (el) {
+                        el.scrollIntoView({ behavior: "smooth" });
+                    }
+                }}
+                className="text-sm font-semibold flex flex-col items-center gap-2 hover:text-darkFooter font-[family-name:var(--font-geist-mono)] cursor-pointer"
+            >
+                Explore my work 👇
             </div>
         </div>
     );

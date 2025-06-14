@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { FaLinkedin, FaEnvelope } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 export default function Footer() {
     const [time, setTime] = useState<string>("");
@@ -24,33 +24,58 @@ export default function Footer() {
     }, []);
 
     return (
-        <footer className="w-[90%] sm:w-[95%] mx-auto border-b-5 border-lightFooter dark:border-darkFooter mb-10">
-            <div className="flex items-center justify-between gap-6 text-lightFooter dark:text-darkFooter text-xl sm:text-2xl py-5">
-                <div className="text-center sm:text-start text-lightFooter dark:text-darkFooter">
-                    <p className="text-xs sm:text-lg uppercase tracking-widest font-bold font-mono">{`// Batam, Indonesia`}</p>
-                </div>
-                <div className="flex gap-1 sm:gap-5 items-center flex-col sm:flex-row">
-                    <p className="text-xs sm:text-lg hidden sm:flex font-mono font-bold">[ CONTACT ] :</p>
-                    <div className="flex gap-4">
+        <footer className="w-[90%] sm:w-[95%] mx-auto mb-10 font-[family-name:var(--font-noto-sans)]">
+            <div className="flex flex-col gap-2 sm:gap-4 text-xl sm:text-2xl py-5">
+                {/* [ social / contact ] */}
+                <div className="flex flex-col mb-5">
+                    <p className="text-[clamp(1.2rem,2vw,1.5rem)] font-bold mb-1 sm:mb-0">CONTACT / SOCIAL</p>
+                    <div className="flex flex-col items-start gap-2 pt-5 text-[clamp(1rem,2vw,1.35rem)]">
+                        <a
+                            onClick={() => {
+                                navigator.clipboard.writeText("erwin.dg8ts@gmail.com");
+                                toast.success("Email copied!");
+                            }}
+                            className="cursor-pointer hover:underline"
+                            aria-label="Copy Email"
+                        >
+                            Email
+                        </a>
                         <a
                             href="https://linkedin.com/in/erwindggr"
+                            className="cursor-pointer hover:underline"
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="LinkedIn"
                         >
-                            <FaLinkedin className="hover:text-blue-500 transition-colors duration-200" />
+                            LinkedIn
                         </a>
                         <a
-                            href="mailto:erwin.dg8ts@gmail.com"
-                            aria-label="Email"
+                            href="https://www.instagram.com/erwindggr/"
+                            className="cursor-pointer hover:underline"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
                         >
-                            <FaEnvelope className="hover:text-yellow-600 transition-colors duration-200" />
+                            Instagram
+                        </a>
+                        <a
+                            href="https://x.com/erwindggr"
+                            className="cursor-pointer hover:underline"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                        >
+                            Twitter
                         </a>
                     </div>
                 </div>
-                <div className="text-xs sm:text-lg font-bold font-mono">[ GMT+7 ] {time}</div>
-            </div>
 
+                {/* [ // Batam ] [ Time ] */}
+                <div className="flex flex-col sm:flex-row justify-between text-[clamp(1.2rem,2vw,1.5rem)] font-bold">
+                    <p>BATAM, INDONESIA</p>
+                    <p>[ GMT+7 ] {time}</p>
+                </div>
+            </div>
         </footer>
     );
 }

@@ -31,13 +31,21 @@ const tools = [
 
 const projects = [
   {
+    title: "Basic POS",
+    year: 2025,
+    description: "POS System",
+    tags: "Fullstack Development",
+    image: "/projects/othello-1.png",
+    url: "/projects/basicpos",
+  },
+  {
     title: "Smart Vision",
     year: 2025,
     description: "Landing Page",
     tags: "Front-end Development",
     video: "/projects/smartVision.mp4",
     image: "/projects/recipePal-2.png",
-    url: "/smartvision"
+    url: "/projects/smartvision",
   },
   {
     title: "Recipe Pal",
@@ -45,15 +53,15 @@ const projects = [
     description: "Recipe App",
     tags: "Front-end Development",
     image: "/projects/recipePal-1.png",
-    url: "/recipepal"
+    url: "/projects/recipepal",
   },
   {
     title: "Othello",
     year: 2023,
     description: "Board Game",
-    tags: "Front-end / Game Development",
+    tags: "Front / Game Development",
     image: "/projects/othello-2.png",
-    url: "/othello"
+    url: "/projects/othello",
   },
   {
     title: "Kopi O",
@@ -61,15 +69,37 @@ const projects = [
     description: "POS System",
     tags: "Fullstack Development",
     image: "/projects/othello-1.png",
-    url: "/kopio"
+    url: "/projects/kopio",
+  },
+  {
+    title: "KasirPedia",
+    year: 2023,
+    description: "POS System",
+    tags: "Frontend Development",
+    image: "/projects/othello-1.png",
+    url: "/projects/kasirpedia",
+  },
+  {
+    title: "Netflix Clone",
+    year: 2023,
+    description: "Streaming UI Clone",
+    tags: "Frontend Development",
+    image: "/projects/othello-1.png",
+    url: "/projects/netflixclone",
+  },
+  {
+    title: "Nabook",
+    year: 2023,
+    description: "E-commerce",
+    tags: "Frontend Development",
+    image: "/projects/othello-1.png",
+    url: "/projects/nabook",
   },
 ];
 
 const aboutMe = [
-  "Hey, I'm Erwin Gunawan — a fullstack developer who builds web apps with thoughtful design and smooth performance. I focus on creating engaging, accessible, and fast user interfaces that don't just work, but feel great to use.",
-  "Currently, I'm a Fullstack Developer at CLV Innovation Technology, a software house where I develop and maintain systems for a Singapore-based F&B chain",
-  "Before getting into tech, I spent several years in business and administrative roles — managing operations, contracts, and customer service.",
-  "In my spare time, you'll find me playing badminton, hanging out with friends, or — more recently — getting into climbing.",
+  "Hey there, I'm Erwin Gunawan — I've been a fullstack developer for 2 years, building websites with React and .NET. I create engaging, accessible user interfaces that not only work well, but feel great to use.",
+  "Currently a Fullstack Developer at CLV Innovation Technology, a software house where I develop and maintain systems for a Singapore-based F&B chain.",
 ];
 
 const experience = [
@@ -77,7 +107,7 @@ const experience = [
     company: "CLV Innovation Technology",
     role: "Fullstack Developer",
     desc: "Software House",
-    work: "Maintained and extended food delivery integrations (Grabfood, Foodpanda, Deliveroo) for a Singapore F&B chain using .NET, building custom dashboards and automation tools for multi-branch operations.",
+    work: "Maintained and extended food delivery integrations (Grabfood, Foodpanda, Deliveroo), building custom dashboards and automation tools for multi-branch operations using .NET, C# and JavaScript.",
     from: "2023",
     to: "Present",
   },
@@ -129,7 +159,16 @@ Ensure offline/local deployment support using Docker.
 Deliver a responsive UI suitable for budget devices and small screens.`,
     softSkill: ["Team Collaboration", "Project Planning", "Problem Solving"],
     tech: ["React", "Next.js", "Node.js", "Tailwind CSS", "MySQL", "Docker"],
-    src: ["/projects/demo.jpg", "/projects/othello-1.png", "/projects/recipePal-1.png", "/projects/recipePal-2.png", "/projects/othello-2.png", "/projects/demo.jpg", "/projects/othello-1.png", "/projects/recipePal-1.png"],
+    src: [
+      "/projects/demo.jpg",
+      "/projects/othello-1.png",
+      "/projects/recipePal-1.png",
+      "/projects/recipePal-2.png",
+      "/projects/othello-2.png",
+      "/projects/demo.jpg",
+      "/projects/othello-1.png",
+      "/projects/recipePal-1.png",
+    ],
   },
   {
     title: "SmartVision",
@@ -148,7 +187,11 @@ Deliver a clean, high-converting landing page UI.`,
       "Motion Design",
     ],
     tech: ["React", "Next.js", "Tailwind CSS", "GSAP"],
-    src: ["/projects/demo.jpg", "/projects/othello-1.png", "/projects/recipePal-1.png"],
+    src: [
+      "/projects/demo.jpg",
+      "/projects/othello-1.png",
+      "/projects/recipePal-1.png",
+    ],
   },
   {
     title: "Recipe Pal",
@@ -167,7 +210,11 @@ Create a responsive and intuitive UI for basic user search flows.`,
       "Component Structuring",
     ],
     tech: ["React", "Next.js", "Tailwind CSS", "Axios", "Spoonacular API"],
-    src: ["/projects/demo.jpg", "/projects/othello-1.png", "/projects/recipePal-1.png"],
+    src: [
+      "/projects/demo.jpg",
+      "/projects/othello-1.png",
+      "/projects/recipePal-1.png",
+    ],
   },
   {
     title: "Othello",
@@ -186,7 +233,11 @@ Translate static tutorial logic into a dynamic, rule-driven board game.`,
       "Debugging through Iteration",
     ],
     tech: ["React", "JavaScript", "CSS"],
-    src: ["/projects/demo.jpg", "/projects/othello-1.png", "/projects/recipePal-1.png"],
+    src: [
+      "/projects/demo.jpg",
+      "/projects/othello-1.png",
+      "/projects/recipePal-1.png",
+    ],
   },
   {
     title: "Kopi O",
@@ -207,7 +258,11 @@ Collaborate and split frontend/backend responsibilities across team.`,
       "Cross-functional Communication",
     ],
     tech: ["React", "Node.js", "Express.js", "MySQL", "Chakra UI", "Git"],
-    src: ["/projects/demo.jpg", "/projects/othello-1.png", "/projects/recipePal-1.png"],
+    src: [
+      "/projects/demo.jpg",
+      "/projects/othello-1.png",
+      "/projects/recipePal-1.png",
+    ],
   },
 ];
 

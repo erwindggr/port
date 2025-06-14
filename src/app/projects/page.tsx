@@ -1,11 +1,99 @@
+"use client";
+
+import { projects } from "@/data/all";
+import MarqueeText from "@/components/contact/marquee";
+import Footer from "@/components/footer";
+import { useRef } from "react";
+import Link from "next/link";
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { SplitText, ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
+
 export default function Projects() {
+    const projectHeader = useRef<HTMLHeadingElement>(null);
+    const projectList = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+        const ProjectHeadsplit = new SplitText(projectHeader.current, { type: "chars, words" });
+        gsap.from(ProjectHeadsplit.chars, {
+            scrollTrigger: {
+                trigger: ".projectHead",
+                start: "top 80%",
+            },
+            y: 100,
+            opacity: 0,
+            rotationX: 90,
+            transformOrigin: "top center",
+            ease: "back.out(1.7)",
+            stagger: {
+                each: 0.03,
+                from: "start",
+            },
+            duration: 1.2,
+        });
+
+        gsap.from(projectList.current, {
+            scrollTrigger: {
+                trigger: ".projectList",
+                start: "top 80%",
+            },
+            y: 100,
+            opacity: 0,
+            rotationX: 90,
+            transformOrigin: "top center",
+            ease: "back.out(1.7)",
+            stagger: {
+                each: 0.03,
+                from: "start",
+            },
+            duration: 1.2,
+        })
+    });
+
     return (
-        <div className="w-full min-h-screen">
-            <div className="w-[90%] sm:w-[95%] mx-auto flex items-center py-30">
-                <p className="text-[clamp(0.65rem,2.5vw,1.2rem)]">
-                    PROJECT PAGE
-                </p>
+        <section className="w-full mt-30 font-[family-name:var(--font-geist-sans)]">
+            <div className="w-[90%] sm:w-[95%] mx-auto">
+                <div className="w-full py-10 mb-10">
+                    <h1 ref={projectHeader} className="projectHead text-[clamp(3.2rem,10vw,10rem)] font-bold overflow-hidden break-words leading-tight">
+                        Built with intent.
+                    </h1>
+                </div>
+
+                <div ref={projectList} className="projectList w-full flex flex-col sm:flex-row">
+                    <div className="w-full sm:w-1/2 flex justify-start gap-5 sm:gap-0 sm:justify-between">
+                        <div className="one sm:w-1/2 text-[clamp(1.2rem,2vw,2rem)]"><p>01</p></div>
+                        <div className="one sm:w-1/2 text-[clamp(1.2rem,2vw,2rem)]"><p>Project Selection</p></div>
+                    </div>
+
+                    <div className="w-full sm:w-1/2 mt-10 sm:mt-0">
+                        {projects.map((project, index) => (
+                            <Link
+                                href={project.url}
+                                key={index}
+                                className="border-b text-xs sm:text-sm hover:text-lg hover:cursor-pointer hover:bg-black hover:text-white border-gray-400 py-6 sm:py-3 flex justify-between transition-all duration-150 ease-out"
+                            >
+                                <h3 className="w-1/3">{project.title}</h3>
+                                <div className="w-2/3 flex justify-between mr-2 sm:mr-4">
+                                    <p className="w-1/2">{project.description}</p>
+                                    <p className="w-1/2 text-end">
+                                        {project.tags}
+                                        <span className="hidden sm:inline"> · {project.year}</span>
+                                    </p>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+
+                </div>
             </div>
-        </div>
-    )
+
+            <div className="mt-20">
+                <MarqueeText />
+            </div>
+            <Footer />
+        </section>
+    );
 }

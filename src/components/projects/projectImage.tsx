@@ -35,9 +35,9 @@ export default function ProjectImage({ src }: ProjectImageProps) {
             let anim: gsap.TweenVars = {};
 
             if (variant === 0) {
-                anim = { ...base, y: -20, scale: 0.6 };
+                anim = { ...base, y: -20, scale: 0.9 };
             } else {
-                anim = { ...base, y: -10, scale: 0.98 };
+                anim = { ...base, y: -10, scale: 0.95 };
             }
 
             gsap.from(el, anim);
