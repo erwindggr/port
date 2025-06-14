@@ -62,23 +62,23 @@ export default function Projects() {
                     </h1>
                 </div>
 
-                <div ref={projectList} className="projectList w-full flex flex-col sm:flex-row">
-                    <div className="w-full sm:w-1/2 flex justify-start gap-5 sm:gap-0 sm:justify-between">
-                        <div className="one sm:w-1/2 text-[clamp(1.2rem,2vw,2rem)]"><p>01</p></div>
-                        <div className="one sm:w-1/2 text-[clamp(1.2rem,2vw,2rem)]"><p>Project Selection</p></div>
+                <div ref={projectList} className="projectList w-full flex flex-col xl:flex-row">
+                    <div className="w-full xl:w-1/2 flex justify-start gap-5 xl:gap-0 xl:justify-between">
+                        <div className="one xl:w-1/2 text-[clamp(1.2rem,2vw,2rem)]"><p>01</p></div>
+                        <div className="one xl:w-1/2 text-[clamp(1.2rem,2vw,2rem)]"><p>Project Selection</p></div>
                     </div>
 
-                    <div className="w-full sm:w-1/2 mt-10 sm:mt-0">
+                    <div className="w-full xl:w-1/2 mt-10 sm:mt-0">
                         {projects.map((project, index) => (
                             <Link
                                 href={project.url}
                                 key={index}
-                                className="border-b text-xs sm:text-sm hover:text-lg hover:cursor-pointer hover:bg-black hover:text-white border-gray-400 py-6 sm:py-3 flex justify-between transition-all duration-150 ease-out"
+                                className="border-b text-xs sm:text-sm hover:text-lg hover:cursor-pointer hover:bg-black hover:text-white border-gray-400 py-6 xl:py-3 flex justify-between transition-all duration-150 ease-out"
                             >
                                 <h3 className="w-1/3">{project.title}</h3>
-                                <div className="w-2/3 flex justify-between mr-2 sm:mr-4">
-                                    <p className="w-1/2">{project.description}</p>
-                                    <p className="w-1/2 text-end">
+                                <div className="w-2/3 flex justify-between mr-2 xl:mr-4">
+                                    <p className="w-1/3">{project.description}</p>
+                                    <p className="w-2/3 text-end">
                                         {project.tags}
                                         <span className="hidden sm:inline"> · {project.year}</span>
                                     </p>

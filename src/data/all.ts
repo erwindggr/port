@@ -82,7 +82,7 @@ const projects = [
   {
     title: "Netflix Clone",
     year: 2023,
-    description: "Streaming UI Clone",
+    description: "UI Clone",
     tags: "Frontend Development",
     image: "/projects/othello-1.png",
     url: "/projects/netflixclone",
@@ -98,7 +98,7 @@ const projects = [
 ];
 
 const aboutMe = [
-  "Hey there, I'm Erwin Gunawan — I've been a fullstack developer for 2 years, building websites with React and .NET. I create engaging, accessible user interfaces that not only work well, but feel great to use.",
+  "I'm Erwin Gunawan — I've been a fullstack developer for 2 years, building websites with React and .NET. I create engaging, accessible user interfaces that not only work well, but feel great to use.",
   "Currently a Fullstack Developer at CLV Innovation Technology, a software house where I develop and maintain systems for a Singapore-based F&B chain.",
 ];
 

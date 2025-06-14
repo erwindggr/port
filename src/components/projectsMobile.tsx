@@ -110,7 +110,7 @@ export default function ProjectsMobile() {
                 <div className="mt-5 flex justify-center">
                     <Link
                         href="/projects"
-                        className="px-6 py-2 rounded-full border-2 border-current font-semibold"
+                        className="px-5 py-3 font-[family-name:var(--font-noto-sans)] relative rounded-full duration-300 border-2 font-semibold active:text-lightFooter active:border-lightFooter border-baseLight dark:border-baseDark hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:active:border-darkFooter dark:active:text-darkFooter"
                     >
                         See more
                     </Link>

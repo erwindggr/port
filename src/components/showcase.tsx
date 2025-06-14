@@ -35,19 +35,19 @@ export default function Showcase() {
         });
 
         // Advanced: Scale header on scroll
-        gsap.to(".latest-header", {
-            scrollTrigger: {
-                trigger: ".latest-header",
-                start: "center center",      // when header hits top of viewport
-                end: "bottom top",     // until it's out of view
-                scrub: true,
-            },
-            scale: 0.35,
-            paddingBottom: -30,
-            y: -60,
-            transformOrigin: "bottom left",
-            ease: "none",
-        });
+        // gsap.to(".latest-header", {
+        //     scrollTrigger: {
+        //         trigger: ".latest-header",
+        //         start: "center center",      // when header hits top of viewport
+        //         end: "bottom top",     // until it's out of view
+        //         scrub: true,
+        //     },
+        //     scale: 0.35,
+        //     paddingBottom: -30,
+        //     y: -60,
+        //     transformOrigin: "bottom left",
+        //     ease: "none",
+        // });
 
         gsap.from(".showcaseContent", {
             scrollTrigger: {
@@ -97,8 +97,8 @@ export default function Showcase() {
     });
 
     return (
-        <div id="projects" className="w-full min-h-screen mt-40 sm:mt-50">
-            <div className="w-[90%] sm:w-[95%] mx-auto relative z-5 mb-0 sm:mb-[-20]">
+        <div id="projects" className="w-full mt-40 sm:mt-50 xl:mb-30">
+            <div className="w-[90%] sm:w-[95%] mx-auto relative z-5 mb-0 xl:mb-[-20]">
                 <h2 className="latest-header text-[clamp(2.5rem,7vw,10rem)] font-bold font-[family-name:var(--font-noto-sans)]">Recent work &#x2198;</h2>
             </div>
 

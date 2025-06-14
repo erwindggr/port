@@ -77,10 +77,10 @@ export default function SideBar() {
         <>
             <button
                 onClick={toggle}
-                className="md:hidden p-2 z-[60] fixed top-4 right-4"
+                className="md:hidden p-2 z-[60] fixed top-4 right-4 border-2 bg-white dark:bg-black rounded-full"
                 aria-label="Toggle menu"
             >
-                {isOpen ? <X size={45} /> : <Menu size={25} />}
+                {isOpen ? <X size={30} /> : <Menu size={30} />}
             </button>
 
             {isOpen && (
@@ -105,10 +105,10 @@ export default function SideBar() {
 
                     <div ref={buttonRef} className="mt-16">
                         <a
-                            href="/cv.pdf"
+                            href="/Erwin CV.pdf"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block px-4 py-2 mt-10 rounded-full border-2 text-lg font-semibold border-black dark:border-white"
+                            className="inline-block px-5 py-3 font-[family-name:var(--font-noto-sans)] relative rounded-full duration-300 border-2 font-semibold active:text-lightFooter active:border-lightFooter border-baseLight dark:border-baseDark hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:active:border-darkFooter dark:active:text-darkFooter"
                         >
                             Get CV
                         </a>

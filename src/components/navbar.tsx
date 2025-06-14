@@ -5,6 +5,7 @@ import CvBtn from "./cvBtn";
 import Logo from "./logo";
 import SideBar from "./sideBar";
 import { useEffect, useState, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -14,6 +15,8 @@ gsap.registerPlugin(useGSAP);
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const navRef = useRef<HTMLDivElement | null>(null);
+    const pathname = usePathname();
+
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
@@ -85,7 +88,7 @@ export default function Navbar() {
 
     return (
         <>
-            <div ref={navRef} className={`w-full fixed top-0 left-0 z-50 transition-all duration-100 ease-in-out ${scrolled ? 'bg-white/30 dark:bg-black/60 backdrop-blur-lg shadow-sm' : ''}`}>
+            <div ref={navRef} className={`w-full hidden md:flex fixed top-0 left-0 z-50 transition-all duration-100 ease-in-out ${scrolled ? 'bg-white/30 dark:bg-black/60 backdrop-blur-lg shadow-sm' : ''}`}>
                 <div className="w-[90%] sm:w-[95%] mx-auto flex items-center justify-between py-4 border-b-1" style={{ borderColor: 'rgba(150, 150, 136, 0.3)' }}>
 
                     <Logo />
@@ -94,8 +97,16 @@ export default function Navbar() {
                         {
                             route.map((item, index) => (
                                 <Link key={index} href={item.route}>
-                                    <p className="text-lg px-4 py-2 text-lightDarker dark:text-darkLighter hover:text-baseLight hover:dark:text-baseDark font-semibold font-[family-name:var(--font-noto-sans)]">{item.name}</p>
+                                    <p
+                                        className={`text-lg px-4 py-2 font-bold font-[family-name:var(--font-noto-sans)]
+                                                    ${pathname === item.route ?
+                                                'text-baseLight dark:text-baseDark' :
+                                                'text-lightFooter dark:text-darkFooter hover:text-baseLight hover:dark:text-baseDark'}`}
+                                    >
+                                        {item.name}
+                                    </p>
                                 </Link>
+
                             ))
                         }
                     </div>

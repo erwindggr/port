@@ -65,7 +65,7 @@ export default function ContactForm() {
             />
             <button
                 type="submit"
-                className="self-end px-5 py-3 sm:px-7 sm:py-4 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:active:text-darkFooter rounded-full font-bold relative border-2 border-baseLight dark:border-baseDark dark:active:border-darkFooter transition-colors duration-200"
+                className="self-end hover:cursor-pointer px-5 py-3 font-[family-name:var(--font-noto-sans)] relative rounded-full duration-300 border-2 font-semibold active:text-lightFooter active:border-lightFooter border-baseLight dark:border-baseDark hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:active:border-darkFooter dark:active:text-darkFooter"
             >
                 Send
             </button>

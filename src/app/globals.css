@@ -18,7 +18,7 @@
   --color-lightDarker: #454545;
   --color-darkLighter: #a4aab6;
   --color-darkFooter: #474747;
-  --color-lightFooter: #c5cad4;
+  --color-lightFooter: #979ead;
 }
 
 @media (prefers-color-scheme: dark) {

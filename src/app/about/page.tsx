@@ -76,17 +76,17 @@ export default function About() {
             <div className="w-[90%] sm:w-[95%] mx-auto">
                 <div className="w-full py-10 mb-10">
                     <h1 ref={aboutHeader} className="aboutHead text-[clamp(3.2rem,10vw,10rem)] font-bold overflow-hidden break-words leading-tight">
-                        Hello there.
+                        About me.
                     </h1>
                 </div>
 
-                <div ref={aboutMeRef} className="introCont w-full flex flex-col sm:flex-row">
-                    <div className="w-full sm:w-1/2 flex justify-start gap-5 sm:gap-0 sm:justify-between">
-                        <div className="one sm:w-1/2 text-[clamp(1.2rem,2vw,2rem)]"><p>01</p></div>
-                        <div className="one sm:w-1/2 text-[clamp(1.2rem,2vw,2rem)]"><p>Introduction</p></div>
+                <div ref={aboutMeRef} className="introCont w-full flex flex-col xl:flex-row mb-20">
+                    <div className="w-full xl:w-1/2 flex justify-start gap-5 xl:gap-0 xl:justify-between">
+                        <div className="one xl:w-1/2 text-[clamp(1.2rem,2vw,2rem)]"><p>01</p></div>
+                        <div className="one xl:w-1/2 text-[clamp(1.2rem,2vw,2rem)]"><p>Introduction</p></div>
                     </div>
 
-                    <div className="w-full min-h-[35vh] sm:w-1/2 mt-2 sm:mt-0 flex flex-col gap-y-2">
+                    <div className="w-full xl:w-1/2 mt-2 xl:mt-0 flex flex-col gap-y-2">
                         {
                             aboutMe.map((about, idx) => (
                                 <div key={idx} className="">
@@ -99,27 +99,28 @@ export default function About() {
                     </div>
                 </div>
 
-                <div ref={experienceRef} className="experienceCont w-full flex flex-col sm:flex-row">
-                    <div className="w-full sm:w-1/2 flex justify-start gap-5 sm:gap-0 sm:justify-between">
-                        <div className="one sm:w-1/2 text-[clamp(1.2rem,2vw,2rem)]"><p>02</p></div>
-                        <div className="one sm:w-1/2 text-[clamp(1.2rem,2vw,2rem)]"><p>Experience</p></div>
+                <div ref={experienceRef} className="experienceCont w-full flex flex-col xl:flex-row">
+                    <div className="w-full xl:w-1/2 flex justify-start gap-5 xl:gap-0 xl:justify-between">
+                        <div className="one xl:w-1/2 text-[clamp(1.2rem,2vw,2rem)]"><p>02</p></div>
+                        <div className="one xl:w-1/2 text-[clamp(1.2rem,2vw,2rem)]"><p>Experience</p></div>
                     </div>
 
-                    <div className="w-full min-h-[35vh] sm:w-1/2 mt-4 sm:mt-0 flex flex-col gap-y-6">
+                    <div className="w-ful xl:w-1/2 mt-4 sm:mt-0 flex flex-col">
                         {
                             experience.map((experience, idx) => (
-                                <div key={idx} className="w-full flex justify-between">
-                                    <div className="w-3/4 flex flex-col">
-                                        <h5 className="text-[clamp(1rem,2vw,1.2rem)]">{experience.role} – {experience.company} </h5>
-                                        <p className="text-[clamp(0.8rem,2vw,1rem)] font-light italic mt-1">—{experience.desc}</p>
-
-                                        <p className="text-[clamp(0.9rem,2vw,1rem)] text-justify font-light mt-2">{experience.work}</p>
+                                <div key={idx} className="w-full flex flex-col justify-between py-5 border-b-1">
+                                    <div className="flex">
+                                        <div className="w-3/4 flex flex-col">
+                                            <h5 className="text-[clamp(1rem,2vw,1.2rem)]">{experience.role} ✦ {experience.company} </h5>
+                                            <p className="text-[clamp(0.8rem,2vw,1rem)] font-light italic mt-1">—{experience.desc}</p>
+                                        </div>
+                                        <div className="w-1/4 flex justify-end">
+                                            <p className="text-[clamp(0.8rem,2vw,1rem)]">
+                                                {experience.from} — {experience.to}
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div className="w-1/4 flex justify-end">
-                                        <p className="text-[clamp(0.8rem,2vw,1rem)]">
-                                            {experience.from} — {experience.to}
-                                        </p>
-                                    </div>
+                                    <p className="text-[clamp(0.9rem,2vw,1rem)] text-justify font-light mt-2">{experience.work}</p>
                                 </div>
                             ))
                         }
