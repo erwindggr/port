@@ -2,30 +2,25 @@ import Hero from "@/components/hero";
 // import Tools from "@/components/tools";
 import Intro from "@/components/intro";
 import Showcase from "@/components/showcase";
+import TechStackSection from "@/components/techStack";
 import ProjectsMobile from "@/components/projectsMobile";
 import Projects from "@/components/projects";
-import Footer from "@/components/footer";
-// import Erwin from "@/components/erwin";
-import MarqueeText from "@/components/contact/marquee";
 
 export default function Home() {
   return (
     <div className="w-full">
       <Hero />
+      <div className="max-w-[2000px] mx-auto">
+        <TechStackSection />
+      </div>
       <div className="max-w-full overflow-hidden">
         <Intro />
       </div>
-      <Showcase />
-      {/* <Tools /> */}
-      <ProjectsMobile />
-      <Projects />
-      <div className="mt-20">
-        <MarqueeText />
+      <div className="max-w-[2000px] mx-auto mb-20">
+        <Showcase />
+        <ProjectsMobile />
+        <Projects />
       </div>
-      {/* <Erwin /> */}
-      <Footer />
-      {/* <div className="w-full min-h-screen"></div> */}
-      {/* Add more components as needed */}
     </div>
   );
 }

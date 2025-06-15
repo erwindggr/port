@@ -122,15 +122,15 @@ export default function Projects() {
 
     return (
         <section className="w-[90%] sm:w-[95%] mx-auto hidden lg:block font-[family-name:var(--font-noto-sans)]">
-            <div className="w-full relative z-[-1] mb-0 xl:mb-[-50]">
-                <h2 className="other-header mb-30 text-[clamp(3.5rem,7vw,10rem)] font-bold ">Projects &#x2935;</h2>
+            <div className="w-full relative z-[-1]">
+                <h2 className="other-header text-[clamp(3.5rem,7vw,10rem)] font-bold ">Projects &#x2935;</h2>
             </div>
             {projects.slice(1, 5).map((project, index) => (
                 <Link href={project.url} key={index}>
                     <div
-                        onMouseEnter={() => handleEnter(index)}
-                        onMouseLeave={() => handleLeave(index)}
-                        className="content flex flex-col md:flex-row justify-between border-b border-[rgba(150,150,136,0.5)] py-15 hover:cursor-pointer text-darkLighter dark:text-lightDarker hover:text-baseLight dark:hover:text-baseDark"
+                        onMouseEnter={() => handleEnter(index + 1)}
+                        onMouseLeave={() => handleLeave(index + 1)}
+                        className="content flex flex-col md:flex-row justify-between border-b hover:border-lightFooter dark:hover:border-darkFooter py-15 hover:cursor-pointer hover:text-lightFooter dark:hover:text-darkFooter"
                     >
                         <div
                             ref={(el: HTMLDivElement | null) => {

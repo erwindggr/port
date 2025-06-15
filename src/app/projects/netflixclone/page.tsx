@@ -3,8 +3,8 @@ import ProjectHead from "@/components/projects/projectHead";
 import ProjectOverview from "@/components/projects/projectOverview";
 import ProjectImage from "@/components/projects/projectImage";
 
-export default function RecipePal() {
-    const title = "Recipe Pal";
+export default function NetflixClone() {
+    const title = "Netflix Clone";
     const project = detailedProjects.find((p) => p.title === title);
 
     return (
@@ -23,7 +23,7 @@ export default function RecipePal() {
                         softSkill={project.softSkill}
                         tech={project.tech}
                     />
-                    <ProjectImage src={project.src} />
+                    <ProjectImage src={project.src} featuredIndex={0} />
                 </div>
             ) : (
                 <p className="text-gray-500">Project not found.</p>

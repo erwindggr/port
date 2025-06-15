@@ -24,7 +24,7 @@ export default function Footer() {
     }, []);
 
     return (
-        <footer className="w-[90%] sm:w-[95%] mx-auto mb-10 font-[family-name:var(--font-noto-sans)]">
+        <footer className="w-[90%] sm:w-[95%] mx-auto mb-10 font-[family-name:var(--font-noto-sans)] dark:text-darkFooter text-lightFooter">
             <div className="flex flex-col gap-2 sm:gap-4 text-xl sm:text-2xl py-5">
                 {/* [ social / contact ] */}
                 <div className="flex flex-col mb-5">

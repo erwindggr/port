@@ -35,7 +35,7 @@ const projects = [
     year: 2025,
     description: "POS System",
     tags: "Fullstack Development",
-    image: "/projects/othello-1.png",
+    image: "/projects/basicpos1.png",
     url: "/projects/basicpos",
   },
   {
@@ -52,7 +52,7 @@ const projects = [
     year: 2024,
     description: "Recipe App",
     tags: "Front-end Development",
-    image: "/projects/recipePal-1.png",
+    image: "/projects/recipe1.png",
     url: "/projects/recipepal",
   },
   {
@@ -60,7 +60,7 @@ const projects = [
     year: 2023,
     description: "Board Game",
     tags: "Front / Game Development",
-    image: "/projects/othello-2.png",
+    image: "/projects/othello1.png",
     url: "/projects/othello",
   },
   {
@@ -68,37 +68,21 @@ const projects = [
     year: 2023,
     description: "POS System",
     tags: "Fullstack Development",
-    image: "/projects/othello-1.png",
+    image: "/projects/kopio3.jpeg",
     url: "/projects/kopio",
-  },
-  {
-    title: "KasirPedia",
-    year: 2023,
-    description: "POS System",
-    tags: "Frontend Development",
-    image: "/projects/othello-1.png",
-    url: "/projects/kasirpedia",
   },
   {
     title: "Netflix Clone",
     year: 2023,
     description: "UI Clone",
     tags: "Frontend Development",
-    image: "/projects/othello-1.png",
+    image: "/projects/netflix1.png",
     url: "/projects/netflixclone",
-  },
-  {
-    title: "Nabook",
-    year: 2023,
-    description: "E-commerce",
-    tags: "Frontend Development",
-    image: "/projects/othello-1.png",
-    url: "/projects/nabook",
   },
 ];
 
 const aboutMe = [
-  "I'm Erwin Gunawan — I've been a fullstack developer for 2 years, building websites with React and .NET. I create engaging, accessible user interfaces that not only work well, but feel great to use.",
+  "Hey there, I'm Erwin Gunawan — I've been a fullstack developer for 2 years, building websites with React and .NET. I create engaging, accessible user interfaces that not only work well, but feel great to use.",
   "Currently a Fullstack Developer at CLV Innovation Technology, a software house where I develop and maintain systems for a Singapore-based F&B chain.",
 ];
 
@@ -151,23 +135,19 @@ const detailedProjects = [
     year: 2025,
     shortDescription: "POS System for Small Retail",
     description:
-      "Basic POS is a full-featured point-of-sale system designed for real-world use in small retail environments. It supports product variations, stock monitoring, receipt reprinting, and daily sales reports—all within a mobile-friendly interface optimized for low-spec devices.",
+      "Basic POS is a full-featured point-of-sale system designed for real-world use in small retail environments. It supports product variations, stock monitoring, receipt reprinting, and daily sales reports—all optimized for low-spec devices.",
     overview:
-      "Developed as part of a team capstone project, this system includes authentication, sales tracking, and inventory features tailored to small business needs. Designed for both desktop and mobile, it's built to be deployed locally via Docker with minimal setup.",
+      "This project was built as an individual initiative to address real-world POS needs in small stores. It features authentication, transaction tracking, inventory control, and daily reporting—all designed to run locally via Docker with minimal setup effort. The system prioritizes speed and usability for both desktop and mobile devices.",
     projectGoals: `Build a practical, user-friendly POS system with essential retail features.
 Ensure offline/local deployment support using Docker.
 Deliver a responsive UI suitable for budget devices and small screens.`,
-    softSkill: ["Team Collaboration", "Project Planning", "Problem Solving"],
-    tech: ["React", "Next.js", "Node.js", "Tailwind CSS", "MySQL", "Docker"],
+    softSkill: ["Problem Solving", "System Design", "Independent Execution"],
+    tech: ["React", "Next.js", "Tailwind CSS", "MySQL", "Prisma", "Docker"],
     src: [
-      "/projects/demo.jpg",
-      "/projects/othello-1.png",
-      "/projects/recipePal-1.png",
-      "/projects/recipePal-2.png",
-      "/projects/othello-2.png",
-      "/projects/demo.jpg",
-      "/projects/othello-1.png",
-      "/projects/recipePal-1.png",
+      "/projects/basicpos1.png",
+      "/projects/basicpos3.png",
+      "/projects/basicpos10.png",
+      "/projects/basicpos7.png",
     ],
   },
   {
@@ -188,9 +168,10 @@ Deliver a clean, high-converting landing page UI.`,
     ],
     tech: ["React", "Next.js", "Tailwind CSS", "GSAP"],
     src: [
-      "/projects/demo.jpg",
-      "/projects/othello-1.png",
-      "/projects/recipePal-1.png",
+      "/projects/smartvision1.png",
+      "/projects/smartvision2.png",
+      "/projects/smartvision3.png",
+      "/projects/smartvision4.png",
     ],
   },
   {
@@ -211,9 +192,10 @@ Create a responsive and intuitive UI for basic user search flows.`,
     ],
     tech: ["React", "Next.js", "Tailwind CSS", "Axios", "Spoonacular API"],
     src: [
-      "/projects/demo.jpg",
-      "/projects/othello-1.png",
-      "/projects/recipePal-1.png",
+      "/projects/recipe1.png",
+      "/projects/recipe2.png",
+      "/projects/recipe3.png",
+      "/projects/recipe4.png",
     ],
   },
   {
@@ -233,11 +215,7 @@ Translate static tutorial logic into a dynamic, rule-driven board game.`,
       "Debugging through Iteration",
     ],
     tech: ["React", "JavaScript", "CSS"],
-    src: [
-      "/projects/demo.jpg",
-      "/projects/othello-1.png",
-      "/projects/recipePal-1.png",
-    ],
+    src: ["/projects/othello1.png", "/projects/othello2.png"],
   },
   {
     title: "Kopi O",
@@ -259,9 +237,32 @@ Collaborate and split frontend/backend responsibilities across team.`,
     ],
     tech: ["React", "Node.js", "Express.js", "MySQL", "Chakra UI", "Git"],
     src: [
-      "/projects/demo.jpg",
-      "/projects/othello-1.png",
-      "/projects/recipePal-1.png",
+      "/projects/kopio4.png",
+      "/projects/kopio1.png",
+      "/projects/kopio3.jpeg",
+    ],
+  },
+  {
+    title: "Netflix Clone",
+    year: 2023,
+    shortDescription: "Netflix UI recreation using React and Chakra UI",
+    description:
+      "Netflix Clone is a frontend project built during the Purwadhika Bootcamp's frontend module. The assignment required each student to individually recreate the Netflix homepage based on the UI learned during the module, using React and Chakra UI as the styling system.",
+    overview:
+      "The project focused on replicating key sections of Netflix’s homepage, including the header, hero banner, feature rows, and footer. Students were expected to practice responsive layout, component structuring, and design system usage while working from a reference layout. This exercise strengthened fundamentals in layout composition and UI consistency using Chakra UI components.",
+    projectGoals: `Recreate a close visual match of the Netflix homepage.
+Practice React component decomposition and Chakra UI styling.
+Reinforce responsive layout and design system usage.`,
+    softSkill: [
+      "Individual Execution",
+      "Attention to Detail",
+      "Frontend Discipline",
+    ],
+    tech: ["React", "Chakra UI"],
+    src: [
+      "/projects/netflix1.png",
+      "/projects/netflix2.png",
+      "/projects/netflix3.png",
     ],
   },
 ];

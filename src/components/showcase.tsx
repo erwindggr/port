@@ -98,7 +98,7 @@ export default function Showcase() {
 
     return (
         <div id="projects" className="w-full mt-40 sm:mt-50 xl:mb-30">
-            <div className="w-[90%] sm:w-[95%] mx-auto relative z-5 mb-0 xl:mb-[-20]">
+            <div className="w-[90%] sm:w-[95%] mx-auto relative z-5">
                 <h2 className="latest-header text-[clamp(2.5rem,7vw,10rem)] font-bold font-[family-name:var(--font-noto-sans)]">Recent work &#x2198;</h2>
             </div>
 

@@ -1,10 +1,8 @@
 "use client";
 
-import MarqueeText from "@/components/contact/marquee"
 import ContactMsg from "@/components/contact/contactMsg"
 import ContactForm from "@/components/contact/contactForm"
 import { toast } from "react-hot-toast";
-import Footer from "@/components/footer";
 import { useRef, useState } from "react";
 
 import gsap from "gsap";
@@ -91,52 +89,49 @@ export default function Contact() {
     })
 
     return (
-        <div className="w-full mt-30 flex flex-col items-center">
-
-
-            <div className="w-[90%] sm:w-[95%]">
-                <h1 ref={contactHeader} className="contactHead mb-5 font-[family-name:var(--font-geist-sans)] text-[clamp(1rem,10vw,8rem)] overflow-hidden break-words leading-tight">
-                    Let&apos;s work together
-                </h1>
-                <h2
-                    ref={emailHeader}
-                    onClick={() => {
-                        navigator.clipboard.writeText("erwin.dg8ts@gmail.com");
-                        toast.success("Email copied!");
-                    }}
-                    onMouseEnter={() => setShowTooltip(true)}
-                    onMouseLeave={() => setShowTooltip(false)}
-                    onMouseMove={(e) => setTooltipPos({ x: e.clientX + 20, y: e.clientY + 20 })}
-                    className="emailHead relative inline-block w-fit font-[family-name:var(--font-geist-sans)] text-[clamp(1rem,6vw,5rem)] overflow-hidden break-words leading-tight mb-5 sm:mb-20 cursor-pointer"
-                >
-                    erwin.dg8ts@gmail.com
-                    <span className="block h-[4px] w-full bg-current origin-left scale-x-0" id="email-underline" />
-                </h2>
-                {showTooltip && (
-                    <div
-                        className="fixed z-50 bg-black text-white dark:bg-white dark:text-black text-xs px-4 py-2 pointer-events-none"
-                        style={{ top: tooltipPos.y, left: tooltipPos.x }}
+        <div className="w-full mt-30 mb-20">
+            <div className="max-w-[2000px] mx-auto">
+                <div className="w-[90%] sm:w-[95%] mx-auto">
+                    <div className="w-full py-10 mb-10">
+                        <h1 ref={contactHeader} className="contactHead text-[clamp(3.2rem,10vw,10rem)] font-[family-name:var(--font-noto-sans)] font-bold overflow-hidden break-words leading-tight">
+                            Let&apos;s work together.
+                        </h1>
+                    </div>
+                    <h2
+                        ref={emailHeader}
+                        onClick={() => {
+                            navigator.clipboard.writeText("erwin.dg8ts@gmail.com");
+                            toast.success("Email copied!");
+                        }}
+                        onMouseEnter={() => setShowTooltip(true)}
+                        onMouseLeave={() => setShowTooltip(false)}
+                        onMouseMove={(e) => setTooltipPos({ x: e.clientX + 20, y: e.clientY + 20 })}
+                        className="emailHead relative inline-block w-fit font-[family-name:var(--font-geist-mono)] text-[clamp(1.5rem,3vw,5rem)] mb-5 sm:mb-0 overflow-hidden break-words leading-tight cursor-pointer"
                     >
-                        <p className="text-xl font-[family-name:var(--font-geist-sans)]">
-                            Click to copy 🖱️
-                        </p>
-                    </div>
-                )}
+                        erwin.dg8ts@gmail.com
+                        <span className="block h-[4px] w-full bg-current origin-left scale-x-0" id="email-underline" />
+                    </h2>
+                    {showTooltip && (
+                        <div
+                            className="fixed z-50 bg-black text-white dark:bg-white dark:text-black text-xs px-4 py-2 pointer-events-none"
+                            style={{ top: tooltipPos.y, left: tooltipPos.x }}
+                        >
+                            <p className="text-xl font-[family-name:var(--font-geist-sans)]">
+                                Click to copy
+                            </p>
+                        </div>
+                    )}
 
-                <div ref={contactContent} className="contactContent flex flex-col lg:flex-row gap-y-5 sm:gap-x-20">
-                    <div className="lg:w-1/2">
-                        <ContactMsg />
-                    </div>
-                    <div className="lg:w-1/2">
-                        <ContactForm />
+                    <div ref={contactContent} className="contactContent flex flex-col lg:flex-row gap-y-5 sm:gap-x-20">
+                        <div className="lg:w-1/2">
+                            <ContactMsg />
+                        </div>
+                        <div className="lg:w-1/2">
+                            <ContactForm />
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className="mt-20 w-full">
-                <MarqueeText />
-            </div>
-            {/* <Erwin /> */}
-            <Footer />
         </div>
     )
 }

@@ -7,7 +7,7 @@ export default function MarqueeText() {
     return (
         <Marquee speed={150} gradient={false}>
             {items.map((text, i) => (
-                <p key={i} className="text-[clamp(3.2rem,10vw,10rem)] mr-10">
+                <p key={i} className="text-lightFooter dark:text-darkFooter text-[clamp(3.2rem,10vw,10rem)] mr-10">
                     {text}
                 </p>
             ))}

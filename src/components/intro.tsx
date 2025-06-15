@@ -55,7 +55,7 @@ export default function Intro() {
     }, []);
 
     return (
-        <section ref={sectionRef} className="w-[90%] sm:w-[95%] mx-auto py-10 sm:py-15 sm:px-10 lg:px-20 border-b-1 border-t-1" style={{ borderColor: 'rgba(150, 150, 136, 0.3)' }}>
+        <section ref={sectionRef} className="w-[90%] sm:w-[95%] mx-auto py-10 sm:py-15 sm:px-10 lg:px-20 border-b-1" style={{ borderColor: 'rgba(150, 150, 136, 0.3)' }}>
             <h2 className="text-[clamp(1.5rem,5vw,3rem)] font-bold text-center leading-snug font-[family-name:var(--font-noto-sans)]">
                 <span id="yes" className="inline-block mr-2">Crafting</span>
                 <span className="inline-block">, ideas into&nbsp;</span>

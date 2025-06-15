@@ -8,66 +8,65 @@ import { useRef } from "react";
 
 type ProjectImageProps = {
     src: string[];
+    featuredIndex?: number; // optionally pass index you want full-width
 };
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export default function ProjectImage({ src }: ProjectImageProps) {
-    const imgRefs = useRef<HTMLDivElement[]>([]);
-    const setRef = (el: HTMLDivElement | null, index: number) => {
-        if (el) imgRefs.current[index] = el;
-    };
+export default function ProjectImage({ src, featuredIndex = -1 }: ProjectImageProps) {
+    const wrapperRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
-        imgRefs.current.forEach((el, i) => {
-            const variant = i % 3;
-
-            const base = {
-                opacity: 0,
-                duration: 1.4,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: el,
-                    start: "top 65%",
+        gsap.utils.toArray<HTMLDivElement>(".gallery-img").forEach((el, i) => {
+            gsap.fromTo(
+                el,
+                {
+                    opacity: 0,
+                    y: 30,
+                    scale: 0.95,
                 },
-            };
-
-            let anim: gsap.TweenVars = {};
-
-            if (variant === 0) {
-                anim = { ...base, y: -20, scale: 0.9 };
-            } else {
-                anim = { ...base, y: -10, scale: 0.95 };
-            }
-
-            gsap.from(el, anim);
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: el,
+                        start: "top 85%",
+                    },
+                    delay: i * 0.05,
+                }
+            );
         });
     }, []);
 
     return (
-        <div className="grid grid-cols-2 sm:w-full w-[90%] mx-auto mt-30 mb-10">
-            {src.map((path, i) => {
-                const isFullWidth =
-                    i % 3 === 0 ||
-                    (i % 3 !== 0 && i === src.length - 1 && src.length % 3 !== 0);
+        <div className="max-w-[2000px] mx-auto">
+            <div
+                ref={wrapperRef}
+                className="w-[90%] sm:w-[95%] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4 mt-20"
+            >
+                {src.map((path, i) => {
+                    const isFeatured = i === featuredIndex;
 
-                return (
-                    <div
-                        key={i}
-                        ref={(el) => setRef(el, i)}
-                        className={`relative ${isFullWidth ? "col-span-2" : "col-span-1"
-                            } aspect-[16/9] overflow-hidden`}
-                    >
-                        <Image
-                            src={path}
-                            alt={`project image ${i + 1}`}
-                            fill
-                            className="object-cover"
-                            priority={i === 0}
-                        />
-                    </div>
-                );
-            })}
+                    return (
+                        <div
+                            key={i}
+                            className={`gallery-img relative aspect-[16/9] overflow-hidden ${isFeatured ? "sm:col-span-2" : ""
+                                }`}
+                        >
+                            <Image
+                                src={path}
+                                alt={`project screenshot ${i + 1}`}
+                                fill
+                                className="object-contain"
+                                priority={i === 0}
+                            />
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 }

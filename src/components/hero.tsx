@@ -175,7 +175,7 @@ export default function Hero() {
                         FULLSTACK<span className="text-purple-600 dark:text-pink-800">✦</span>
                     </p>
 
-                    <p className="developer text-[#31363F] text-end text-[clamp(3.2rem,10vw,20rem)] font-bold overflow-hidden break-words leading-tight">
+                    <p className="developer dark:text-darkFooter text-lightFooter text-end text-[clamp(3.2rem,10vw,20rem)] font-bold overflow-hidden break-words leading-tight">
                         DEVELOPER
                     </p>
                 </div>

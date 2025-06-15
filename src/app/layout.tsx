@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display, Cormorant_Garamond, Noto_Sans } from "next/font/google";
 import Navbar from "@/components/navbar";
+import MarqueeText from "@/components/contact/marquee";
+import Footer from "@/components/footer";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 
@@ -43,13 +45,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playFairDisplay.variable} ${cormorantGaramond.variable} ${notoSans.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playFairDisplay.variable} ${cormorantGaramond.variable} ${notoSans.variable} antialiased min-h-screen flex flex-col`}
       >
         <Toaster position="bottom-center" toastOptions={{ duration: 2000 }} />
         <Navbar />
-        <div />
-        {children}
+
+        {/* Main Content */}
+        <main className="flex-grow">
+          {children}
+        </main>
+
+        {/* Sticky Bottom */}
+        <div>
+          <MarqueeText />
+          <div className="max-w-[2000px] mx-auto">
+            <Footer />
+          </div>
+        </div>
       </body>
     </html>
   );
 }
+
