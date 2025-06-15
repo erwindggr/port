@@ -61,7 +61,7 @@ const projects = [
     description: "Board Game",
     tags: "Front / Game Development",
     image: "/projects/othello1.png",
-    url: "/projects/othello",
+    url: "/projects/othello1",
   },
   {
     title: "Kopi O",
