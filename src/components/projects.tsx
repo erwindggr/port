@@ -35,7 +35,7 @@ export default function Projects() {
 
     const handleEnter = (index: number) => {
         setHoveredIndex(index);
-        gsap.to(leftRefs.current[index], {
+        gsap.to(leftRefs.current[index - 1], {
             x: 20,
             duration: 0.5,
             ease: "back.out(1.7)",
@@ -59,7 +59,7 @@ export default function Projects() {
 
     const handleLeave = (index: number) => {
         setHoveredIndex(null);
-        gsap.to(leftRefs.current[index], {
+        gsap.to(leftRefs.current[index - 1], {
             x: 0,
             duration: 0.5,
             ease: "back.out(1.7)",
