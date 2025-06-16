@@ -75,7 +75,7 @@ export default function TechStackSection() {
                     >
                         <div className="relative w-16 h-16 mb-2">
                             <Image
-                                src={`/logos/${tech}.${["gsap", "next"].includes(tech) ? "svg" : "png"}`}
+                                src={`/logos/${tech}.${tech === "gsap" ? "svg" : "png"}`}
                                 alt={tech}
                                 fill
                                 className="object-contain"
